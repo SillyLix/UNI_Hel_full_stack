@@ -3,14 +3,14 @@ This is a repo where I will add all the tasks and projects I do for the Full Sta
 
 # File Format!
 <pre>
-Part 0
-  task 1
-    (other files needed in task e.g. html, css, js ...)
-  task 2
-  task 3
-part 1
+Part_0
+  task_0.4_[NAME]
+    (other files needed in task e.g. html, css, js, md ...)
+  task_0.5_[NAME]
+  task_0.6_[NAME]
+part_1
   ...
-part 2
+part_2
   ...
 </pre>
   
@@ -24,6 +24,8 @@ part 2
       &nbsp; I have also used CSS before and know how to use it; as such, I didn't spend too much time looking at documentation!  <br>
       &nbsp; Time used: Around 5 Min
     - task 3 **HTML forms**
-      &nbsp; I have also used HTML forms before to make some forms; as such, I didn't spend too much time looking at documentation!  <br>
+      &nbsp; I have also used HTML forms before to build some forms; as such, I didn't spend too much time looking at the documentation!  <br>
       &nbsp; Time used: Around 5 Min
-    - task 4 **New note diagram**      
+    - task 4 **New note diagram**
+      &nbsp; I learnt about mermend and git terminal commands and used mermend to make the diagram.  <br>
+      &nbsp; Time used: Around 1 hour

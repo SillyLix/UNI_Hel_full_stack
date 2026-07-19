@@ -32,3 +32,6 @@ part_2
     - task 5 **Single page app diagram**<br>
       &nbsp; Made a diagram for the SPA page on what type of request it sends to the server and the reply from the server <br>
       &nbsp; Time used: Around 25 min
+  - task 5 **New note in Single page app diagram**<br>
+      &nbsp; Made a diagram for the SPA page when submit is pressed <br>
+      &nbsp; Time used: Around 15 min

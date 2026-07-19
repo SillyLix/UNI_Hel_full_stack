@@ -22,6 +22,9 @@ part_2
   - task 1 **Course Information, step 1**<br>
   Got done with part one. I did two versions. One that was finite, so there can only be 3 parts and exercises, and another one with a loop and checks for the errors to make the code work with as many parts and exersises as wanted. In the process, I learnt how to use a for loop in JS and React <br><br>
    Time used: Around 1 Hour
+ - task 2 **Course Information, step 2**<br>
+   Made a Part function that returns a paragraph <br><br>
+   Time used: Around 5 min
 - Part 0 - 18.07.2026 - 19.07.2026
   - task 1 **HTML** <br>
      I have used HTML before and know how to use it; as such, I didn't spend too much time looking at documentation! <br><br>

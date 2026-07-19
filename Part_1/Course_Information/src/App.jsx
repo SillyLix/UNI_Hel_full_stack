@@ -14,11 +14,8 @@ const Content = (prams) => {
   let contents = [];
 
   for (let index = 0; index < prams.part_array.length; index++) {
-    contents.push(
-      <p key={index}>
-      {prams.part_array[index]} {prams.exercise_Array[index]}
-      </p>
-
+    contents.push( 
+        <Part key={index} name={prams.part_array[index]} exercise={prams.exercise_Array[index]} />
     )
   }
       
@@ -39,6 +36,13 @@ const Total = (prams) => {
     <p>
         Number of exercises {totalNum}
     </p>
+  )
+}
+
+const Part = (prams) => {
+  return (
+    <p>{ prams.name} { prams.exercise }</p>
+   
   )
 }
 

@@ -29,9 +29,12 @@ part_2
 - task 3 **Course Information, step 3**<br>
   Updated the code to work with an object <br><br>
   Time used: Around 10 min
-- task 3 **Course Information, step 4**<br>
+- task 4 **Course Information, step 4**<br>
   I was technically already doing this on step 3 <br><br>
   Time used: Around 30 sec
+- task 5 **Course Information, step 5**<br>
+  made the whole prams into single JavaScript object as instructed<br><br>
+  Time used: Around 1 min
 
 ## Part 0 - 18.07.2026 - 19.07.2026
 
@@ -50,6 +53,6 @@ part_2
 - task 5 **Single page app diagram**<br>
   Made a diagram for the SPA page on what type of request it sends to the server and the reply from the server <br><br>
   Time used: Around 25 min
-- task 5 **New note in Single page app diagram**<br>
+- task 6 **New note in Single page app diagram**<br>
   Made a diagram for the SPA page when the submit button is pressed <br><br>
   Time used: Around 15 min

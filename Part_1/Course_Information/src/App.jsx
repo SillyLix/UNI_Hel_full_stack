@@ -1,18 +1,18 @@
-const Header = (prams) => {
+const Header = (props) => {
 
   return (
     <div>
-      <h1>{prams.course.name}</h1>
+      <h1>{props.course.name}</h1>
     </div>
   )
 }
 
-const Content = (prams) => {
-  console.log(prams);
+const Content = (props) => {
+  console.log(props);
   let contents = [];
   let keyOfItem;
 
-  prams.course.parts.forEach((element, index) => {
+  props.course.parts.forEach((element, index) => {
     keyOfItem = 'parts_' + index;
     contents.push( 
       <Part key={keyOfItem} name={element.name} exercise={element.exercises} />
@@ -26,11 +26,11 @@ const Content = (prams) => {
   )
 }
 
-const Total = (prams) => {
-  console.log(prams);
+const Total = (props) => {
+  console.log(props);
   let totalNum = 0;
 
-  prams.course.parts.forEach(element => {
+  props.course.parts.forEach(element => {
     totalNum += element.exercises;
   });
 
@@ -41,9 +41,9 @@ const Total = (prams) => {
   )
 }
 
-const Part = (prams) => {
+const Part = (props) => {
   return (
-    <p>{ prams.name} { prams.exercise }</p>
+    <p>{ props.name} { props.exercise }</p>
    
   )
 }

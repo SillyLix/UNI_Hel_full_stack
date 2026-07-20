@@ -1,14 +1,26 @@
 import { useState } from 'react';
 
-const App = () => {
-  const [ counter, setCounter ] = useState(0);
+const Display = ({ counter }) => <div>{counter}</div>;
+  
+const Button = ({ onClick, text }) =>
+  <button onClick={onClick}>{text}</button>;
 
-  setTimeout(
-    () => setCounter(counter +1 ), 1000
-  )
+const App = () => {
+  const [counter, setCounter] = useState(0);
+
+  const increaseByOne = () => setCounter(counter + 1);
+  const decreesByOne = () => setCounter(counter -1)
+  const setToZero = () => setCounter(0);
 
   return (
-    <div>{counter}</div>
+    <div>
+      < Display counter={counter}/>
+      <Button onClick={increaseByOne} text={'Plus'} />
+      <Button onClick={decreesByOne} text={'minus'} />
+      <Button onClick={setToZero} text={'Reset'} />
+
+
+    </div>
   )
 }
 

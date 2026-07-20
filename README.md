@@ -29,6 +29,9 @@ part_2
 - task 3 **Course Information, step 3**<br>
   Updated the code to work with an object <br><br>
   Time used: Around 10 min
+- task 3 **Course Information, step 4**<br>
+  I was technically already doing this on step 3 <br><br>
+  Time used: Around 30 sec
 
 ## Part 0 - 18.07.2026 - 19.07.2026
 

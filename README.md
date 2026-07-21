@@ -2,7 +2,7 @@
 
 This is a repo where I will add all the tasks and projects I do for the Full Stack Open course provided by the University of Helsinki! I will also try to document the progress and process of how I do things.
 
-# File Format!
+# File Format
 
 <pre>
 Part_0
@@ -16,110 +16,133 @@ part_2
   ...
 </pre>
 
-# Dates and Documentation ↓
+# Dates and Documentation
 
-## Table of contents
+## Table of Contents
 
 - [Part 1 - 19.07.2026 - xx](#part-1---19072026---xx)
-  - [task 1 **Course Information, step 1**<br>](#task-1-course-information-step-1)
-  - [task 2 **Course Information, step 2**<br>](#task-2-course-information-step-2)
-  - [task 3 **Course Information, step 3**<br>](#task-3-course-information-step-3)
-  - [task 4 **Course Information, step 4**<br>](#task-4-course-information-step-4)
-  - [task 5 **Course Information, step 5**<br>](#task-5-course-information-step-5)
-  - [task 6 **unicafe step 1**<br>](#task-6-unicafe-step-1)
-  - [task 7 **unicafe step 2**<br>](#task-7-unicafe-step-2)
-  - [task 8 **unicafe step 3**<br>](#task-8-unicafe-step-2)
-  - [task 9 **unicafe step 4**<br>](#task-9-unicafe-step-4)
-  - [task 10 **unicafe step 5**<br>](#task-10-unicafe-step-5)
-  - [task 11 **unicafe step 6**<br>](#task-11-unicafe-step-6)
+  - [Task 1 - Course Information, step 1](#task-1---course-information-step-1)
+  - [Task 2 - Course Information, step 2](#task-2---course-information-step-2)
+  - [Task 3 - Course Information, step 3](#task-3---course-information-step-3)
+  - [Task 4 - Course Information, step 4](#task-4---course-information-step-4)
+  - [Task 5 - Course Information, step 5](#task-5---course-information-step-5)
+  - [Task 6 - Unicafe, step 1](#task-6---unicafe-step-1)
+  - [Task 7 - Unicafe, step 2](#task-7---unicafe-step-2)
+  - [Task 8 - Unicafe, step 3](#task-8---unicafe-step-3)
+  - [Task 9 - Unicafe, step 4](#task-9---unicafe-step-4)
+  - [Task 10 - Unicafe, step 5](#task-10---unicafe-step-5)
+  - [Task 11 - Unicafe, step 6](#task-11---unicafe-step-6)
+  - [Task 12 - Anecdotes, step 1](#task-12---anecdotes-step-1)
 
 - [Part 0 - 18.07.2026 - 19.07.2026](#part-0---18072026---19072026)
-  - [task 1 **HTML** <br>](#task-1-html)
-  - [task 2 **CSS** <br>](#task-2-css)
-  - [task 3 **HTML forms**<br>](#task-3-html-forms)
-  - [task 4 **New note diagram**<br>](#task-4-new-note-diagram)
-  - [task 5 **Single page app diagram**<br>](#task-5-single-page-app-diagram)
+  - [Task 1 - HTML](#task-1---html)
+  - [Task 2 - CSS](#task-2---css)
+  - [Task 3 - HTML forms](#task-3---html-forms)
+  - [Task 4 - New note diagram](#task-4---new-note-diagram)
+  - [Task 5 - Single page app diagram](#task-5---single-page-app-diagram)
 
 ## Part 1 - 19.07.2026 - xx
 
-### task 1 **Course Information, step 1**<br>
+### Task 1 - Course Information, step 1
 
-Got done with part one. I did two versions. One that was finite, so there can only be 3 parts and exercises, and another one with a loop and checks for the errors to make the code work with as many parts and exercises as wanted. In the process, I learnt how to use a for loop in JS and React <br><br>
-Time used: Around 1 Hour
+Got done with part one. I did two versions. One that was finite, so there can only be 3 parts and exercises, and another one with a loop and checks for the errors to make the code work with as many parts and exercises as wanted. In the process, I learnt how to use a for loop in JS and React.
 
-### task 2 **Course Information, step 2**<br>
+**Time used:** Around 1 hour
 
-Made a Part function that returns a paragraph <br><br>
-Time used: Around 5 min
+### Task 2 - Course Information, step 2
 
-### task 3 **Course Information, step 3**<br>
+Made a `Part` function that returns a paragraph.
 
-Updated the code to work with an object <br><br>
-Time used: Around 10 min
+**Time used:** Around 5 minutes
 
-### task 4 **Course Information, step 4**<br>
+### Task 3 - Course Information, step 3
 
-I was technically already doing this on step 3 <br><br>
-Time used: Around 30 sec
+Updated the code to work with an object.
 
-### task 5 **Course Information, step 5**<br>
+**Time used:** Around 10 minutes
 
-Made the whole prams into a single JavaScript object as instructed. <br> <br>
-Time used: Around 1 min
+### Task 4 - Course Information, step 4
 
-### task 6 **unicafe, step 1**<br>
+I was technically already doing this in step 3.
 
-Made a new project for Unicafe inside `part_1` and made a feedback project. I chose to use an `object` for the review and have one `useState` as that felt more natural in this case.<br> <br>
-Time used: Around 15 min
+**Time used:** Around 30 seconds
 
-### task 7 **unicafe, step 2**<br>
+### Task 5 - Course Information, step 5
 
-Added all, average, and percentage of positive feedback to the website<br> <br>
-Time used: Around 10 min
+Made the whole params into a single JavaScript object as instructed.
 
-### task 8 **unicafe, step 3**<br>
+**Time used:** Around 1 minute
 
-Skipped this step since `Statistics` and all other stuff is it's own components since the beginning of the project. <br> <br>
-Time used: Around 0 min
+### Task 6 - Unicafe, step 1
 
-### task 9 **unicafe, step 4**<br>
+Made a new project for Unicafe inside `part_1` and created a feedback project. I chose to use an object for the review and have a single `useState`, as that felt more natural in this case.
 
-Statics only rendered if there is feedback, otherwise a message is shown. <br> <br>
-Time used: Around 2 min
+**Time used:** Around 15 minutes
 
-### task 10 **unicafe, step 5**<br>
+### Task 7 - Unicafe, step 2
 
-Added StatisticLine to be used inside Statistics. The Button part was already done so I didn't touch that. <br> <br>
-Time used: Around 2 min
+Added all, average, and percentage of positive feedback to the website.
 
-### task 11 **unicafe, step 6**<br>
+**Time used:** Around 10 minutes
 
-Made the statistics display in a table <br> <br>
-Time used: Around 15 min
+### Task 8 - Unicafe, step 3
+
+Skipped this step since `Statistics` and the other parts were already separate components from the beginning of the project.
+
+**Time used:** Around 0 minutes
+
+### Task 9 - Unicafe, step 4
+
+Statistics are only rendered if there is feedback; otherwise, a message is shown.
+
+**Time used:** Around 2 minutes
+
+### Task 10 - Unicafe, step 5
+
+Added `StatisticLine` to be used inside `Statistics`. The `Button` component was already done, so I didn't need to change it.
+
+**Time used:** Around 2 minutes
+
+### Task 11 - Unicafe, step 6
+
+Made the statistics display in a table.
+
+**Time used:** Around 15 minutes
+
+### Task 12 - Anecdotes, step 1
+
+Made a new project for Anecdotes and added functionality to display a random anecdote with a button to show another random one.
+
+**Time used:** Around 20 minutes
 
 ## Part 0 - 18.07.2026 - 19.07.2026
 
-### task 1 **HTML** <br>
+### Task 1 - HTML
 
-I have used HTML before and know how to use it; as such, I didn't spend too much time looking at documentation! <br><br>
-Time used: Around 5 Min
+I have used HTML before and already know the basics, so I didn't spend much time reading the documentation.
 
-### task 2 **CSS** <br>
+**Time used:** Around 5 minutes
 
-I have used CSS before and know how to use it, so I didn't spend too much time looking at documentation. <br><br>
-Time used: Around 5 Min
+### Task 2 - CSS
 
-### task 3 **HTML forms**<br>
+I have used CSS before and already know the basics, so I didn't spend much time reading the documentation.
 
-I have also used HTML forms before to build some forms; as such, I didn't spend too much time looking at the documentation! <br><br>
-Time used: Around 5 Min
+**Time used:** Around 5 minutes
 
-### task 4 **New note diagram**<br>
+### Task 3 - HTML forms
 
-I learnt about mermaid and git terminal commands and used mermaid to make the diagram. <br><br>
-Time used: Around 1 hour
+I have built forms before, so I didn't spend much time looking through the documentation.
 
-### task 5 **Single page app diagram**<br>
+**Time used:** Around 5 minutes
 
-Made a diagram for the SPA page on what type of request it sends to the server and the reply from the server <br><br>
-Time used: Around 25 min
+### Task 4 - New note diagram
+
+Learnt about Mermaid and Git terminal commands, then used Mermaid to create the diagram.
+
+**Time used:** Around 1 hour
+
+### Task 5 - Single page app diagram
+
+Created a diagram showing the requests sent by the SPA and the responses returned by the server.
+
+**Time used:** Around 25 minutes

@@ -28,6 +28,8 @@ part_2
   - [task 5 **Course Information, step 5**<br>](#task-5-course-information-step-5)
   - [task 6 **unicafe step 1**<br>](#task-6-unicafe-step-1)
   - [task 7 **unicafe step 2**<br>](#task-7-unicafe-step-2)
+  - [task 8 **unicafe step 3**<br>](#task-8-unicafe-step-2)
+  - [task 9 **unicafe step 4**<br>](#task-9-unicafe-step-4)
 
 - [Part 0 - 18.07.2026 - 19.07.2026](#part-0---18072026---19072026)
   - [task 1 **HTML** <br>](#task-1-html)
@@ -70,8 +72,18 @@ Time used: Around 15 min
 
 ### task 7 **unicafe, step 2**<br>
 
-added all, avg and percentage of positive feedback to the website<br> <br>
+Added all, average, and percentage of positive feedback to the website<br> <br>
 Time used: Around 10 min
+
+### task 8 **unicafe, step 3**<br>
+
+Skipped this step since `Statistics` and all other stuff is it's own components since the beginning of the project. <br> <br>
+Time used: Around 0 min
+
+### task 9 **unicafe, step 4**<br>
+
+Statics only rendered if there is feedback, otherwise a message is shown. <br> <br>
+Time used: Around 2 min
 
 ## Part 0 - 18.07.2026 - 19.07.2026
 

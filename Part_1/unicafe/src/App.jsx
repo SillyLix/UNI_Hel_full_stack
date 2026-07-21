@@ -3,6 +3,11 @@ import { useState } from 'react'
 const Button = ({ onClick, text }) => <button onClick={onClick} > {text} </button>;
 const Header = ({ text }) => <h1>{text}</h1>;
 const PrintStats = ({ review }) => {
+
+  if (review.good === 0 && review.bad === 0 && review.neutral === 0)
+    return (<p>No feedback given</p>);
+
+
   let all = review.good + review.bad + review.neutral;
   let avg = (review.good - review.bad) / all;
   let posPercent = review.good/all *100;

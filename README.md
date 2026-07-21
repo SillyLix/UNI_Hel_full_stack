@@ -65,13 +65,13 @@ Time used: Around 1 min
 
 ### task 6 **unicafe, step 1**<br>
 
-added all, avg and percentage of positive feedback to the website<br> <br>
-Time used: Around 10 min
+Made a new project for Unicafe inside `part_1` and made a feedback project. I chose to use an `object` for the review and have one `useState` as that felt more natural in this case.<br> <br>
+Time used: Around 15 min
 
 ### task 7 **unicafe, step 2**<br>
 
-Made a new project for Unicafe inside `part_1` and made a feedback project. I chose to use an `object` for the review and have one `useState` as that felt more natural in this case.<br> <br>
-Time used: Around 15 min
+added all, avg and percentage of positive feedback to the website<br> <br>
+Time used: Around 10 min
 
 ## Part 0 - 18.07.2026 - 19.07.2026
 

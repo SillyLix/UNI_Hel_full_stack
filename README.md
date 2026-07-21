@@ -26,6 +26,7 @@ part_2
   - [task 3 **Course Information, step 3**<br>](#task-3-course-information-step-3)
   - [task 4 **Course Information, step 4**<br>](#task-4-course-information-step-4)
   - [task 5 **Course Information, step 5**<br>](#task-5-course-information-step-5)
+  - [task 6 **unicafe step 1**<br>](#task-6-unicafe-step-1)
 - [Part 0 - 18.07.2026 - 19.07.2026](#part-0---18072026---19072026)
   - [task 1 **HTML** <br>](#task-1-html)
   - [task 2 **CSS** <br>](#task-2-css)
@@ -57,8 +58,13 @@ Time used: Around 30 sec
 
 ### task 5 **Course Information, step 5**<br>
 
-Made the whole prams into a single JavaScript object as instructed. < br> < br>
+Made the whole prams into a single JavaScript object as instructed. <br> <br>
 Time used: Around 1 min
+
+### task 6 **unicafe, step 1**<br>
+
+Made a new project for Unicafe inside `part_1` and made a feedback project. I chose to use an `object` for the review and have one `useState` as that felt more natural in this case.<br> <br>
+Time used: Around 15 min
 
 ## Part 0 - 18.07.2026 - 19.07.2026
 
@@ -79,7 +85,7 @@ Time used: Around 5 Min
 
 ### task 4 **New note diagram**<br>
 
-I learnt about mermend and git terminal commands and used mermend to make the diagram. <br><br>
+I learnt about mermaid and git terminal commands and used mermaid to make the diagram. <br><br>
 Time used: Around 1 hour
 
 ### task 5 **Single page app diagram**<br>

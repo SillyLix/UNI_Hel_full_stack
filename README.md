@@ -27,6 +27,8 @@ part_2
   - [task 4 **Course Information, step 4**<br>](#task-4-course-information-step-4)
   - [task 5 **Course Information, step 5**<br>](#task-5-course-information-step-5)
   - [task 6 **unicafe step 1**<br>](#task-6-unicafe-step-1)
+  - [task 7 **unicafe step 2**<br>](#task-7-unicafe-step-2)
+
 - [Part 0 - 18.07.2026 - 19.07.2026](#part-0---18072026---19072026)
   - [task 1 **HTML** <br>](#task-1-html)
   - [task 2 **CSS** <br>](#task-2-css)
@@ -62,6 +64,11 @@ Made the whole prams into a single JavaScript object as instructed. <br> <br>
 Time used: Around 1 min
 
 ### task 6 **unicafe, step 1**<br>
+
+added all, avg and percentage of positive feedback to the website<br> <br>
+Time used: Around 10 min
+
+### task 7 **unicafe, step 2**<br>
 
 Made a new project for Unicafe inside `part_1` and made a feedback project. I chose to use an `object` for the review and have one `useState` as that felt more natural in this case.<br> <br>
 Time used: Around 15 min

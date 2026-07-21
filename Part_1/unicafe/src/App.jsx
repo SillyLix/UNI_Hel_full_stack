@@ -3,12 +3,18 @@ import { useState } from 'react'
 const Button = ({ onClick, text }) => <button onClick={onClick} > {text} </button>;
 const Header = ({ text }) => <h1>{text}</h1>;
 const PrintStats = ({ review }) => {
+  let all = review.good + review.bad + review.neutral;
+  let avg = (review.good - review.bad) / all;
+  let posPercent = review.good/all *100;
   console.log(review)
   return (
     <div>
       good: {review.good} <br />
       neutral: {review.neutral}  <br />
       bad: {review.bad}  <br />
+      all: {all} <br />
+      average: {avg} <br />
+      positive: {posPercent} %
     </div>
   )
 }
@@ -28,7 +34,7 @@ function App() {
       <Button onClick={increaseBad} text={'Bad'} />
       
       <Header text={'Statistics'} />
-      < PrintStats review={review} />
+      <PrintStats review={review} />
     </div>
   )
 }

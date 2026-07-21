@@ -30,6 +30,7 @@ part_2
   - [task 7 **unicafe step 2**<br>](#task-7-unicafe-step-2)
   - [task 8 **unicafe step 3**<br>](#task-8-unicafe-step-2)
   - [task 9 **unicafe step 4**<br>](#task-9-unicafe-step-4)
+  - [task 10 **unicafe step 5**<br>](#task-10-unicafe-step-5)
 
 - [Part 0 - 18.07.2026 - 19.07.2026](#part-0---18072026---19072026)
   - [task 1 **HTML** <br>](#task-1-html)
@@ -83,6 +84,11 @@ Time used: Around 0 min
 ### task 9 **unicafe, step 4**<br>
 
 Statics only rendered if there is feedback, otherwise a message is shown. <br> <br>
+Time used: Around 2 min
+
+### task 10 **unicafe, step 5**<br>
+
+Added StatisticLine to be used inside Statistics. The Button part was already done so I didn't touch that. <br> <br>
 Time used: Around 2 min
 
 ## Part 0 - 18.07.2026 - 19.07.2026

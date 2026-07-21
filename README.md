@@ -31,6 +31,7 @@ part_2
   - [task 8 **unicafe step 3**<br>](#task-8-unicafe-step-2)
   - [task 9 **unicafe step 4**<br>](#task-9-unicafe-step-4)
   - [task 10 **unicafe step 5**<br>](#task-10-unicafe-step-5)
+  - [task 11 **unicafe step 6**<br>](#task-11-unicafe-step-6)
 
 - [Part 0 - 18.07.2026 - 19.07.2026](#part-0---18072026---19072026)
   - [task 1 **HTML** <br>](#task-1-html)
@@ -90,6 +91,11 @@ Time used: Around 2 min
 
 Added StatisticLine to be used inside Statistics. The Button part was already done so I didn't touch that. <br> <br>
 Time used: Around 2 min
+
+### task 11 **unicafe, step 6**<br>
+
+Made the statistics display in a table <br> <br>
+Time used: Around 15 min
 
 ## Part 0 - 18.07.2026 - 19.07.2026
 

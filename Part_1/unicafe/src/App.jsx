@@ -2,7 +2,14 @@ import { useState } from 'react'
 
 const Button = ({ onClick, text }) => <button onClick={onClick} > {text} </button>;
 const Header = ({ text }) => <h1>{text}</h1>;
-const StatisticLine = ({ text, value }) => <>{text}: {value} </> ;
+const StatisticLine = ({ text, value }) => {
+  return (
+    <tr>
+      <td>{text}</td>
+      <td>{value}</td>
+    </tr>
+  );
+};
 const PrintStats = ({ review }) => {
 
   if (review.good === 0 && review.bad === 0 && review.neutral === 0)
@@ -11,17 +18,21 @@ const PrintStats = ({ review }) => {
 
   let all = review.good + review.bad + review.neutral;
   let avg = (review.good - review.bad) / all;
-  let posPercent = review.good/all *100;
+  let posPercent = review.good / all * 100;
+  posPercent += '%';
   console.log(review)
   return (
-    <div>
-      <StatisticLine text={'good'} value={review.good} />
-      <StatisticLine text={'neutral'} value={review.neutral} />
-      <StatisticLine text={'bad'} value={review.bad} />
-      <StatisticLine text={'all'} value={all} />
-      <StatisticLine text={'average'} value={avg} />
-      <StatisticLine text={'positive'} value={posPercent} /> %
-    </div>
+
+    <table>
+      <tbody>
+        <StatisticLine text={'good'} value={review.good} />
+        <StatisticLine text={'neutral'} value={review.neutral} />
+        <StatisticLine text={'bad'} value={review.bad} />
+        <StatisticLine text={'all'} value={all} />
+        <StatisticLine text={'average'} value={avg} />
+        <StatisticLine text={'positive'} value={posPercent} />
+      </tbody>
+    </table>
   )
 }
 

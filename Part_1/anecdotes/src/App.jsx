@@ -1,9 +1,30 @@
 import { useState } from 'react';
 
 const Button = ({ onClick, text }) => <button onClick={onClick} > {text} </button>;
+const PrintVote = ({votes, index}) => {
+  return ( 
+    <div>
+    {votes[index]}
+    </div>
+  )
+}
 
 const App = () => {
+
+  // useStates
   const [selected, setSelected] = useState(0)
+  const [votes, setVotes] = useState({
+    0: 0,
+    1: 0,
+    2: 0,
+    3: 0,
+    4: 0,
+    5: 0,
+    6: 0,
+    7: 0,
+  })
+
+  // anecdotes and selections
   const anecdotes = [
     'If it hurts, do it more often.',
     'Adding manpower to a late software project makes it later!',
@@ -16,14 +37,26 @@ const App = () => {
   ]
   const SetRandomSelected = () => {
     let randomNum = Math.floor(Math.random() * anecdotes.length);
+      console.log("random: " + randomNum + " selected: " + selected);
+    while (randomNum === selected) {
+      randomNum = Math.floor(Math.random() * anecdotes.length);
+      console.log("random: " + randomNum + " selected: " + selected);
+    }
     setSelected(randomNum);
-
   }
-   
+  
+    const increaseVote = () => 
+      setVotes({
+        ...votes,
+        [selected]: votes[selected] + 1,
+      });
+    
 
   return (
     <div>
       {anecdotes[selected]} <br />
+      <PrintVote votes={votes} index={selected} />
+      <Button onClick={increaseVote} text={'vote'} />
       <Button onClick={SetRandomSelected} text={'next anecdote'} />
     </div>
   )

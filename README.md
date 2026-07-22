@@ -115,6 +115,12 @@ Made a new project for Anecdotes and added functionality to display a random ane
 
 **Time used:** Around 20 minutes
 
+### Task 12 - Anecdotes, step 1
+
+Added the ability to vote. My first thought on this went to using an object. I made an object `votes` with the use of `useState`. My thought was to connect each quote to each object, but this idea does look quite bad since if we were to add more quotes, it wouldn't be dynamic; as such, I started working to make the same thing but with an array that could be made bigger dynamically.
+
+**Time used:** Around 40 minutes
+
 ## Part 0 - 18.07.2026 - 19.07.2026
 
 ### Task 1 - HTML

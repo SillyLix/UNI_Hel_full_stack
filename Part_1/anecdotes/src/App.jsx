@@ -1,13 +1,14 @@
 import { useState } from 'react';
 
 const Button = ({ onClick, text }) => <button onClick={onClick} > {text} </button>;
-const PrintVote = ({votes, index}) => {
-  return ( 
-    <div>
-    {votes[index]}
-    </div>
-  )
+const PrintVote = ({ votes, index }) => <div>{votes[index]}</div>;
+const PrintBest = ({ bestAnecdotes }) => {
+  if (bestAnecdotes === "")
+    return <>No anecdotes has been voted yet!</>;
+  else return <>{bestAnecdotes} <br /></>;
 }
+const Header = ({ text }) => <h1>{text}</h1>;
+const PrintAnecdotes = ({ text }) => <>{text} <br /></> ;
 
 const App = () => {
   // anecdotes and selections
@@ -23,35 +24,48 @@ const App = () => {
     "It's OK to figure out murder mysteries, but you shouldn't need to figure out code. You should be able to read it."
   ];
 
-  let votes_array = Array(anecdotes.length).fill(0);
-
   // useStates
   const [selected, setSelected] = useState(0);
-  const [votes, setVotes] = useState(votes_array);
-
+  const [votes, setVotes] = useState(Array(anecdotes.length).fill(0));
+  const [bestAnecdotes, setBestAnecdotes] = useState({quote: "", voteIndex: 0})
   
   const SetRandomSelected = () => {
     let randomNum = Math.floor(Math.random() * anecdotes.length);
-      console.log("random: " + randomNum + " selected: " + selected);
     while (randomNum === selected) {
       randomNum = Math.floor(Math.random() * anecdotes.length);
-      console.log("random: " + randomNum + " selected: " + selected);
     }
     setSelected(randomNum);
   }
   
-    const increaseVote = () => 
-      setVotes(votes.with(selected, votes[selected] + 1));
+  const increaseVote = () => {
+    const newVotes = [...votes];
+    newVotes[selected] = newVotes[selected] + 1;
+
+    setVotes(newVotes);
+
+    const maxVotes = Math.max(...newVotes);
+    const maxIndex = newVotes.indexOf(maxVotes);
+
+    setBestAnecdotes({
+      quote: anecdotes[maxIndex],
+      voteIndex: maxIndex,
+    });
+  };
     
 
   return (
     <div>
-      {anecdotes[selected]} <br />
+      <Header text={'Anecdote of the day'} />
+      <PrintAnecdotes text={anecdotes[selected]}/>
       <PrintVote votes={votes} index={selected} />
       <Button onClick={increaseVote} text={'vote'} />
       <Button onClick={SetRandomSelected} text={'next anecdote'} />
-    </div>
-  )
-}
+      <Header text={'Anecdote with most votes'} />
+      <PrintBest bestAnecdotes={bestAnecdotes.quote} />
+      <PrintVote votes={votes} index={bestAnecdotes.voteIndex} />
 
-export default App
+    </div>
+  );
+};
+
+export default App;

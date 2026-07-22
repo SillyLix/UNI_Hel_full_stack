@@ -10,20 +10,6 @@ const PrintVote = ({votes, index}) => {
 }
 
 const App = () => {
-
-  // useStates
-  const [selected, setSelected] = useState(0)
-  const [votes, setVotes] = useState({
-    0: 0,
-    1: 0,
-    2: 0,
-    3: 0,
-    4: 0,
-    5: 0,
-    6: 0,
-    7: 0,
-  })
-
   // anecdotes and selections
   const anecdotes = [
     'If it hurts, do it more often.',
@@ -33,8 +19,17 @@ const App = () => {
     'Premature optimization is the root of all evil.',
     'Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.',
     'Programming without an extremely heavy use of console.log is same as if a doctor would refuse to use x-rays or blood tests when diagnosing patients.',
-    'The only way to go fast, is to go well.'
-  ]
+    'The only way to go fast, is to go well.',
+    "It's OK to figure out murder mysteries, but you shouldn't need to figure out code. You should be able to read it."
+  ];
+
+  let votes_array = Array(anecdotes.length).fill(0);
+
+  // useStates
+  const [selected, setSelected] = useState(0);
+  const [votes, setVotes] = useState(votes_array);
+
+  
   const SetRandomSelected = () => {
     let randomNum = Math.floor(Math.random() * anecdotes.length);
       console.log("random: " + randomNum + " selected: " + selected);
@@ -46,10 +41,7 @@ const App = () => {
   }
   
     const increaseVote = () => 
-      setVotes({
-        ...votes,
-        [selected]: votes[selected] + 1,
-      });
+      setVotes(votes.with(selected, votes[selected] + 1));
     
 
   return (

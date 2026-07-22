@@ -33,6 +33,7 @@ part_2
   - [Task 10 - Unicafe, step 5](#task-10---unicafe-step-5)
   - [Task 11 - Unicafe, step 6](#task-11---unicafe-step-6)
   - [Task 12 - Anecdotes, step 1](#task-12---anecdotes-step-1)
+  - [Task 13 - Anecdotes, step 2](#task-13---anecdotes-step-2)
 
 - [Part 0 - 18.07.2026 - 19.07.2026](#part-0---18072026---19072026)
   - [Task 1 - HTML](#task-1---html)
@@ -115,9 +116,11 @@ Made a new project for Anecdotes and added functionality to display a random ane
 
 **Time used:** Around 20 minutes
 
-### Task 12 - Anecdotes, step 1
+### Task 12 - Anecdotes, step 2
 
-Added the ability to vote. My first thought on this went to using an object. I made an object `votes` with the use of `useState`. My thought was to connect each quote to each object, but this idea does look quite bad since if we were to add more quotes, it wouldn't be dynamic; as such, I started working to make the same thing but with an array that could be made bigger dynamically.
+Added the ability to vote. My first thought on this went to using an object. I made an object `votes` with the use of `useState`. My thought was to connect each quote to each object. When I did this, the main hurdle I had was learning how I could turn a variable to work as an object's key. <br><br>
+But this idea does look quite bad since if we were to add more quotes, it wouldn't be dynamic; as such, I started working to make the same thing but with an array that could be made bigger dynamically. Tho even in the current version, if more quotes were to be added mid-run, it would not work as intended, but since that is not of concern right now, I am overlooking it. <br><br>
+Both version is commited in GitHub with "task 13 with objects" and "task 13 with Array"
 
 **Time used:** Around 40 minutes
 

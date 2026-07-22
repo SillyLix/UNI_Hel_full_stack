@@ -20,7 +20,8 @@ part_2
 
 ## Table of Contents
 
-- [Part 1 - 19.07.2026 - xx](#part-1---19072026---xx)
+- [Part 2 - 23.07.2026 - xx](#part-1---23072026---xx)
+- [Part 1 - 19.07.2026 - 23.07.2026](#part-1---19072026---23072026)
   - [Task 1 - Course Information, step 1](#task-1---course-information-step-1)
   - [Task 2 - Course Information, step 2](#task-2---course-information-step-2)
   - [Task 3 - Course Information, step 3](#task-3---course-information-step-3)
@@ -42,7 +43,9 @@ part_2
   - [Task 4 - New note diagram](#task-4---new-note-diagram)
   - [Task 5 - Single page app diagram](#task-5---single-page-app-diagram)
 
-## Part 1 - 19.07.2026 - xx
+## Part 2 - 23.07.2026 - xx
+
+## Part 1 - 19.07.2026 - 23.07.2026
 
 ### Task 1 - Course Information, step 1
 

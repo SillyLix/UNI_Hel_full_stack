@@ -21,6 +21,8 @@ part_2
 ## Table of Contents
 
 - [Part 2 - 23.07.2026 - xx](#part-1---23072026---xx)
+  - [Task 1 - Course Information, step 6](#task-1---course-information-step-6)
+  - [Task 2 - Course Information, step 7](#task-2---course-information-step-7)
 - [Part 1 - 19.07.2026 - 23.07.2026](#part-1---19072026---23072026)
   - [Task 1 - Course Information, step 1](#task-1---course-information-step-1)
   - [Task 2 - Course Information, step 2](#task-2---course-information-step-2)
@@ -44,6 +46,18 @@ part_2
   - [Task 5 - Single page app diagram](#task-5---single-page-app-diagram)
 
 ## Part 2 - 23.07.2026 - xx
+
+### Task 1 - Course Information, step 6
+
+Put all the components in their own JSX file in the components folder and made a course component that will make the whole course file.
+
+**Time used:** Around 30 min
+
+### Task 2 - Course Information, step 7
+
+Added a `Total` component that uses `arr.reduce` to calculate the sum of the total exercises and shows it on the website.
+
+**Time used:** Around 10 hour
 
 ## Part 1 - 19.07.2026 - 23.07.2026
 

@@ -1,6 +1,6 @@
 # University of Helsinki - Full Stack Open
 
-This is a repo where I will add all the tasks and projects I do for the Full Stack Open course provided by the University of Helsinki! I will also try to document the progress and process of how I do things.
+This is a repo where I will add all the tasks and projects I do for the Full Stack Open course provided by the University of Helsinki! I will also try to document the progress and process of how I do things. <br>
 
 # File Format
 

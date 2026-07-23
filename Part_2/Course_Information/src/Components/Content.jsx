@@ -6,7 +6,7 @@ const Content = ({ parts }) => {
     return (
     
     <div>
-        {parts.map((part, i) => <Part part={part} key={i} />)}
+        {parts.map((part, i) => <Part part={part} key={part.id} />)}
     </div>
 );
 }

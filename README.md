@@ -20,9 +20,12 @@ part_2
 
 ## Table of Contents
 
-- [Part 2 - 23.07.2026 - xx](#part-1---23072026---xx)
+- [Part 2 - 23.07.2026 - xx](#part-2---23072026---xx)
   - [Task 1 - Course Information, step 6](#task-1---course-information-step-6)
   - [Task 2 - Course Information, step 7](#task-2---course-information-step-7)
+  - [Task 3 - Course Information, step 8](#task-3---course-information-step-8)
+  - [Task 4 - Course Information, step 9](#task-4---course-information-step-9)
+  - [Task 5 - Course Information, step 10](#task-5---course-information-step-10)
 - [Part 1 - 19.07.2026 - 23.07.2026](#part-1---19072026---23072026)
   - [Task 1 - Course Information, step 1](#task-1---course-information-step-1)
   - [Task 2 - Course Information, step 2](#task-2---course-information-step-2)
@@ -57,7 +60,25 @@ Put all the components in their own JSX file in the components folder and made a
 
 Added a `Total` component that uses `arr.reduce` to calculate the sum of the total exercises and shows it on the website.
 
-**Time used:** Around 10 hour
+**Time used:** Around 10 min
+
+### Task 3 - Course Information, step 8
+
+Was already using reduce, as such task was skipped :))
+
+**Time used:** Around 0 min
+
+### Task 4 - Course Information, step 9
+
+At the start, I had made a new component `Courses` which would input a course and work through that. But at the end I decided on having the code directly in the `App`.
+
+**Time used:** Around 30 min
+
+### Task 5 - Course Information, step 10
+
+At the start of [Task 1 - Course Information, step 6](#task-1---course-information-step-6), I already had all the components in their own file inside the folder components; as such, I didn't have to do anything in this part.
+
+**Time used:** Around 0 min
 
 ## Part 1 - 19.07.2026 - 23.07.2026
 

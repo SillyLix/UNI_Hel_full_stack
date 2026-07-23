@@ -3,7 +3,7 @@ import Header from "./Header";
 import Total from "./Total";
 
 const Course = ({ course }) => {
-    console.log(course);
+    console.log('course', course);
 
     return (
         <div>

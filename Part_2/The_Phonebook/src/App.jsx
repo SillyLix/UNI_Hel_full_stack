@@ -3,7 +3,9 @@ import RenderNumbers from './components/RenderNumbers';
 import Form from './components/Form';
 
 const App = () => {
-	const [persons, setPersons] = useState([{ name: 'Arto Hellas' }]);
+	const [persons, setPersons] = useState([
+		{ name: 'Arto Hellas', number: '040-1234567' },
+	]);
 
 	return (
 		<div>
@@ -13,7 +15,7 @@ const App = () => {
 				setPersons={setPersons}
 			/>
 			<h2>Numbers</h2>
-			<RenderNumbers nameArr={persons} />
+			<RenderNumbers phoneBookArr={persons} />
 		</div>
 	);
 };

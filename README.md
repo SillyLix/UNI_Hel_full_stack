@@ -28,6 +28,7 @@ part_2
   - [Task 5 - Course Information, step 10](#task-5---course-information-step-10)
   - [Task 6 - The Phonebook, Step 1](#task-6---the-phonebook-step-1)
   - [Task 7 - The Phonebook, Step 2](#task-7---the-phonebook-step-2)
+  - [Task 8 - The Phonebook, Step 3](#task-8---the-phonebook-step-3)
 
 * [Part 1 - 19.07.2026 - 23.07.2026](#part-1---19072026---23072026)
   - [Task 1 - Course Information, step 1](#task-1---course-information-step-1)
@@ -102,6 +103,16 @@ My first idea was to use the `filter` method, but I initially implemented the lo
 Eventually, I recognised the error in my comparison logic thru `console.log`. I returned to using `filter` and implemented the solution correctly.
 
 **Time used:** Around 20 minutes.
+
+### Task 8 - The Phonebook, Step 3
+
+In this task, I added a **number** input field to the form and extended the `person` object to include a `number` property.
+
+I reused the `onChange` handler for the name input as a template and created a similar handler for the number input.
+
+I also added validation in `onAddButtonClicked` to ensure that both the name and number fields are filled in before adding a new person. If either field is empty, an alert is displayed, and the person is not added to the phonebook.
+
+**Time used:** Around 10 minutes.
 
 ## Part 1 - 19.07.2026 - 23.07.2026
 

@@ -1,9 +1,11 @@
-const RenderNumbers = ({ nameArr }) => {
-	console.log('name Arr:', nameArr);
+const RenderNumbers = ({ phoneBookArr }) => {
+	console.log('name Arr:', phoneBookArr);
 	return (
 		<>
-			{nameArr.map((name, i) => (
-				<p key={i + '_' + name}>{name.name}</p>
+			{phoneBookArr.map((element, i) => (
+				<p key={i + '_' + element.name}>
+					{element.name}, {element.number}
+				</p>
 			))}
 		</>
 	);

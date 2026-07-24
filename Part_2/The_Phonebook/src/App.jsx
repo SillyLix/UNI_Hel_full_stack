@@ -1,21 +1,33 @@
 import { useState } from 'react';
-import RenderNumbers from './components/RenderNumbers';
-import Form from './components/Form';
+import Persons from './components/Persons';
+import PersonForm from './components/PersonForm';
+import Filter from './components/Filter';
 
 const App = () => {
 	const [persons, setPersons] = useState([
-		{ name: 'Arto Hellas', number: '040-1234567' },
+		{ name: 'Arto Hellas', number: '040-123456', id: 1 },
+		{ name: 'Ada Lovelace', number: '39-44-5323523', id: 2 },
+		{ name: 'Dan Abramov', number: '12-43-234345', id: 3 },
+		{ name: 'Mary Poppendieck', number: '39-23-6423122', id: 4 },
 	]);
+
+	const [filteredPersons, setFilteredPerson] = useState(persons);
 
 	return (
 		<div>
 			<h2>Phonebook</h2>
-			<Form
+			<Filter
+				persons={persons}
+				setFilteredPersons={setFilteredPerson}
+			/>
+			<h2>add a new</h2>
+			<PersonForm
 				persons={persons}
 				setPersons={setPersons}
+				setFilteredPersons={setFilteredPerson}
 			/>
 			<h2>Numbers</h2>
-			<RenderNumbers phoneBookArr={persons} />
+			<Persons phoneBookArr={filteredPersons} />
 		</div>
 	);
 };

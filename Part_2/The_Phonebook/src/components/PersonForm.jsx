@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const Form = ({ persons, setPersons }) => {
+const PersonForm = ({ persons, setPersons, setFilteredPersons }) => {
 	const [newName, setNewName] = useState('');
 	const [newNumber, setNewNumber] = useState('');
 
@@ -16,25 +16,23 @@ const Form = ({ persons, setPersons }) => {
 
 		// check if the person exists and add if don't
 		const filteredPersons = persons.filter(
-			(element) => element.name === newName,
+			(element) => element.name.toLowerCase() === newName.toLowerCase(),
 		);
 
 		if (filteredPersons.length === 0) {
-			setPersons(persons.concat({ name: newName, number: newNumber }));
+			setPersons(
+				persons.concat({
+					name: newName,
+					number: newNumber,
+					id: persons.length + 1,
+				}),
+			);
 		} else window.alert(`${newName} is already added to phonebook`);
 	};
 
-	const handleNameInputChange = (event) => {
-		console.log(event.target.value);
+	const handleNameInputChange = (event) => setNewName(event.target.value);
 
-		setNewName(event.target.value);
-	};
-
-	const handleNumberInputChange = (event) => {
-		console.log(event.target.value);
-
-		setNewNumber(event.target.value);
-	};
+	const handleNumberInputChange = (event) => setNewNumber(event.target.value);
 
 	return (
 		<form>
@@ -66,4 +64,4 @@ const Form = ({ persons, setPersons }) => {
 	);
 };
 
-export default Form;
+export default PersonForm;

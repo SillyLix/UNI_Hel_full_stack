@@ -29,6 +29,8 @@ part_2
   - [Task 6 - The Phonebook, Step 1](#task-6---the-phonebook-step-1)
   - [Task 7 - The Phonebook, Step 2](#task-7---the-phonebook-step-2)
   - [Task 8 - The Phonebook, Step 3](#task-8---the-phonebook-step-3)
+  - [Task 9 - The Phonebook, Step 4](#task-9---the-phonebook-step-4)
+  - [Task 10 - The Phonebook, Step 5](#task-10---the-phonebook-step-5)
 
 * [Part 1 - 19.07.2026 - 23.07.2026](#part-1---19072026---23072026)
   - [Task 1 - Course Information, step 1](#task-1---course-information-step-1)
@@ -113,6 +115,22 @@ I reused the `onChange` handler for the name input as a template and created a s
 I also added validation in `onAddButtonClicked` to ensure that both the name and number fields are filled in before adding a new person. If either field is empty, an alert is displayed, and the person is not added to the phonebook.
 
 **Time used:** Around 10 minutes.
+
+### Task 9 - The Phonebook, Step 4
+
+I created a new component called `Filter` to filter the phonebook entries. I used `useState` to track the filter value and check whether it changed. Whenever the value changed, the displayed numbers would update.
+
+After some testing, I noticed that I had forgotten to handle uppercase and lowercase letters. To fix this, I used `str.toLowerCase()` to convert both strings to lowercase before checking whether one string was included in the other using `str.includes()`.
+
+After updating the code, I tested it again and noticed another issue. The `filteredPerson` state created in `App` did not update when new entries were added. Instead, I had to change the filter input before the list would refresh. I searched online for a solution, and after a while I used AI for help. That is when I learned about `useEffect`. By using `useEffect`, I was able to make the filtered list update automatically whenever the phonebook data changed.
+
+**Time used:** Around 1 hour.
+
+### Task 10 - The Phonebook, Step 5
+
+I was already using different components in separate folders before starting this task. However, I renamed the files and components so that they matched the naming convention used in the assignment.
+
+**Time used:** Around 1 minute.
 
 ## Part 1 - 19.07.2026 - 23.07.2026
 

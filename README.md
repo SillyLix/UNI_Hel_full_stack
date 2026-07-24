@@ -26,9 +26,10 @@ part_2
   - [Task 3 - Course Information, step 8](#task-3---course-information-step-8)
   - [Task 4 - Course Information, step 9](#task-4---course-information-step-9)
   - [Task 5 - Course Information, step 10](#task-5---course-information-step-10)
-  - [Task 6 - The Phonebook, Step 1](#task-5---The-Phonebook-step-1)
+  - [Task 6 - The Phonebook, Step 1](#task-6---the-phonebook-step-1)
+  - [Task 7 - The Phonebook, Step 2](#task-7---the-phonebook-step-2)
 
-- [Part 1 - 19.07.2026 - 23.07.2026](#part-1---19072026---23072026)
+* [Part 1 - 19.07.2026 - 23.07.2026](#part-1---19072026---23072026)
   - [Task 1 - Course Information, step 1](#task-1---course-information-step-1)
   - [Task 2 - Course Information, step 2](#task-2---course-information-step-2)
   - [Task 3 - Course Information, step 3](#task-3---course-information-step-3)
@@ -43,7 +44,7 @@ part_2
   - [Task 12 - Anecdotes, step 1](#task-12---anecdotes-step-1)
   - [Task 13 - Anecdotes, step 2](#task-13---anecdotes-step-2)
   - [Task 14 - Anecdotes, step 4](#task-14---anecdotes-step-3)
-- [Part 0 - 18.07.2026 - 19.07.2026](#part-0---18072026---19072026)
+* [Part 0 - 18.07.2026 - 19.07.2026](#part-0---18072026---19072026)
   - [Task 1 - HTML](#task-1---html)
   - [Task 2 - CSS](#task-2---css)
   - [Task 3 - HTML forms](#task-3---html-forms)
@@ -91,6 +92,16 @@ After creating `RenderNumbers.jsx`, I noticed that it was also re-rendering ever
 To improve the component structure, I extracted the form into its own component, `Form.jsx`. I passed `persons` and `setPersons` as props to the form component, allowing it to handle adding new people independently. Since the `newName` state is now managed inside `Form`, typing into the input only re-renders the `Form` component. The `App` component and `RenderNumbers` only re-render when `persons` is updated after the user clicks the **Add** button.
 
 **Time used:** Around 40 min
+
+### Task 7 - The Phonebook, Step 2
+
+In this task, I needed to check whether the name entered by the user already existed in the phonebook.
+
+My first idea was to use the `filter` method, but I initially implemented the logic incorrectly by accidentally comparing an object to a string. After noticing that it wasn't working, I tried using the `map` method instead. However, I made the same logical mistake there as well.
+
+Eventually, I recognised the error in my comparison logic thru `console.log`. I returned to using `filter` and implemented the solution correctly.
+
+**Time used:** Around 20 minutes.
 
 ## Part 1 - 19.07.2026 - 23.07.2026
 

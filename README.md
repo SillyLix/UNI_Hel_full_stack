@@ -26,6 +26,8 @@ part_2
   - [Task 3 - Course Information, step 8](#task-3---course-information-step-8)
   - [Task 4 - Course Information, step 9](#task-4---course-information-step-9)
   - [Task 5 - Course Information, step 10](#task-5---course-information-step-10)
+  - [Task 6 - The Phonebook, Step 1](#task-5---The-Phonebook-step-1)
+
 - [Part 1 - 19.07.2026 - 23.07.2026](#part-1---19072026---23072026)
   - [Task 1 - Course Information, step 1](#task-1---course-information-step-1)
   - [Task 2 - Course Information, step 2](#task-2---course-information-step-2)
@@ -79,6 +81,16 @@ At the start, I had made a new component `Courses` which would input a course an
 At the start of [Task 1 - Course Information, step 6](#task-1---course-information-step-6), I already had all the components in their own file inside the folder components; as such, I didn't have to do anything in this part.
 
 **Time used:** Around 0 min
+
+### Task 6 - The Phonebook, Step 1
+
+I initially implemented the entire project in `App.jsx`. I created a `newName` state variable to store the value entered by the user in the input field. As the user typed, `newName` was updated, causing the `App` component to re-render on every keystroke.
+
+After creating `RenderNumbers.jsx`, I noticed that it was also re-rendering every time the input changed, even though the `persons` array itself had not changed. This happened because `RenderNumbers` is a child of `App`, and React re-renders child components whenever the parent component re-renders.
+
+To improve the component structure, I extracted the form into its own component, `Form.jsx`. I passed `persons` and `setPersons` as props to the form component, allowing it to handle adding new people independently. Since the `newName` state is now managed inside `Form`, typing into the input only re-renders the `Form` component. The `App` component and `RenderNumbers` only re-render when `persons` is updated after the user clicks the **Add** button.
+
+**Time used:** Around 40 min
 
 ## Part 1 - 19.07.2026 - 23.07.2026
 

@@ -35,6 +35,7 @@ part_2
   - [Task 12 - The Phonebook, Step 7](#task-12---the-phonebook-step-7)
   - [Task 13 - The Phonebook, Step 8](#task-13---the-phonebook-step-8)
   - [Task 14 - The Phonebook, Step 9](#task-14---the-phonebook-step-9)
+  - [Task 15 - The Phonebook, Step 1+](#task-15---the-phonebook-step-10)
 - [Part 1 - 19.07.2026 - 23.07.2026](#part-1---19072026---23072026)
   - [Task 1 - Course Information, step 1](#task-1---course-information-step-1)
   - [Task 2 - Course Information, step 2](#task-2---course-information-step-2)
@@ -181,7 +182,7 @@ const onDeleteButtonClicked = (id) => {
 
 **Time used:** Around 40 minutes.
 
-### Task 14 - The Phonebook, Step 9
+### Task 15 - The Phonebook, Step 10
 
 This has been the most difficult task for me so far. The main issue was my limited knowledge of JavaScript arrays and their methods. After completing this task, I realised that before continuing with the course, I should spend some time learning more about the different array methods available in JavaScript.
 

@@ -1,23 +1,22 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Persons from './components/Persons';
 import PersonForm from './components/PersonForm';
 import Filter from './components/Filter';
-import axios from 'axios';
-import { useEffect } from 'react';
+import phonebookBackend from './services/phonebookBackend';
 
 const App = () => {
+	// adding persons and filtered persons so the app would update when changed. '
+	// The reason for two is that I wanted to save the filtered people deferent
 	const [persons, setPersons] = useState([]);
 	const [filteredPersons, setFilteredPerson] = useState([]);
 
-	const getDataHook = () => {
-		axios.get('http://localhost:3001/persons').then((response) => {
-			setPersons(response.data);
-			setFilteredPerson(response.data);
+	// get data from server
+	useEffect(() => {
+		phonebookBackend.getAll().then((info) => {
+			setPersons(info);
+			setFilteredPerson(info);
 		});
-	};
-
-	useEffect(getDataHook, []);
-
+	}, []);
 	return (
 		<div>
 			<h2>Phonebook</h2>

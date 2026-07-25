@@ -32,6 +32,7 @@ part_2
   - [Task 9 - The Phonebook, Step 4](#task-9---the-phonebook-step-4)
   - [Task 10 - The Phonebook, Step 5](#task-10---the-phonebook-step-5)
   - [Task 11 - The Phonebook, Step 6](#task-11---the-phonebook-step-6)
+  - [Task 12 - The Phonebook, Step 7](#task-12---the-phonebook-step-7)
 - [Part 1 - 19.07.2026 - 23.07.2026](#part-1---19072026---23072026)
   - [Task 1 - Course Information, step 1](#task-1---course-information-step-1)
   - [Task 2 - Course Information, step 2](#task-2---course-information-step-2)
@@ -137,6 +138,12 @@ I was already using different components in separate folders before starting thi
 I downloaded the required package and added `json-server -p 3001 db.json` as a `server` in scripts inside `package.json`. I then used the `useEffect` hook to fetch and update the phone numbers from the JSON server when the application loaded.
 
 **Time used:** Around 10 minutes.
+
+### Task 12 - The Phonebook, Step 7
+
+I started by making a `phonebookBackend` file under the `services` folder. I am still having a bit of a hard time learning the syntax for the backend, so I looked into the lecture_follow to remember while doing it but didn't directly copy it. I changed the `App` to use the `phonebookBacked` and did the same for the `PersonsForm` too.
+
+**Time used:** Around 30 minutes.
 
 ## Part 1 - 19.07.2026 - 23.07.2026
 

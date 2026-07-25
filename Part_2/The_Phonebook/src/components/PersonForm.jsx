@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import phonebookBackend from '../services/phonebookBackend';
 
 const PersonForm = ({ persons, setPersons, setFilteredPersons }) => {
 	const [newName, setNewName] = useState('');
@@ -20,13 +21,15 @@ const PersonForm = ({ persons, setPersons, setFilteredPersons }) => {
 		);
 
 		if (filteredPersons.length === 0) {
-			setPersons(
-				persons.concat({
-					name: newName,
-					number: newNumber,
-					id: persons.length + 1,
-				}),
-			);
+			const data = {
+				name: newName,
+				number: newNumber,
+				id: persons.length + 1,
+			};
+
+			phonebookBackend.create(data).then((response) => {
+				setPersons(persons.concat(data));
+			});
 		} else window.alert(`${newName} is already added to phonebook`);
 	};
 

@@ -26,6 +26,15 @@ part_2
   - [Task 3 - Course Information, step 8](#task-3---course-information-step-8)
   - [Task 4 - Course Information, step 9](#task-4---course-information-step-9)
   - [Task 5 - Course Information, step 10](#task-5---course-information-step-10)
+  - [Task 6 - The Phonebook, Step 1](#task-6---the-phonebook-step-1)
+  - [Task 7 - The Phonebook, Step 2](#task-7---the-phonebook-step-2)
+  - [Task 8 - The Phonebook, Step 3](#task-8---the-phonebook-step-3)
+  - [Task 9 - The Phonebook, Step 4](#task-9---the-phonebook-step-4)
+  - [Task 10 - The Phonebook, Step 5](#task-10---the-phonebook-step-5)
+  - [Task 11 - The Phonebook, Step 6](#task-11---the-phonebook-step-6)
+  - [Task 12 - The Phonebook, Step 7](#task-12---the-phonebook-step-7)
+  - [Task 13 - The Phonebook, Step 8](#task-13---the-phonebook-step-8)
+  - [Task 14 - The Phonebook, Step 9](#task-14---the-phonebook-step-9)
 - [Part 1 - 19.07.2026 - 23.07.2026](#part-1---19072026---23072026)
   - [Task 1 - Course Information, step 1](#task-1---course-information-step-1)
   - [Task 2 - Course Information, step 2](#task-2---course-information-step-2)
@@ -79,6 +88,125 @@ At the start, I had made a new component `Courses` which would input a course an
 At the start of [Task 1 - Course Information, step 6](#task-1---course-information-step-6), I already had all the components in their own file inside the folder components; as such, I didn't have to do anything in this part.
 
 **Time used:** Around 0 min
+
+### Task 6 - The Phonebook, Step 1
+
+I initially implemented the entire project in `App.jsx`. I created a `newName` state variable to store the value entered by the user in the input field. As the user typed, `newName` was updated, causing the `App` component to re-render on every keystroke.
+
+After creating `RenderNumbers.jsx`, I noticed that it was also re-rendering every time the input changed, even though the `persons` array itself had not changed. This happened because `RenderNumbers` is a child of `App`, and React re-renders child components whenever the parent component re-renders.
+
+To improve the component structure, I extracted the form into its own component, `Form.jsx`. I passed `persons` and `setPersons` as props to the form component, allowing it to handle adding new people independently. Since the `newName` state is now managed inside `Form`, typing into the input only re-renders the `Form` component. The `App` component and `RenderNumbers` only re-render when `persons` is updated after the user clicks the **Add** button.
+
+**Time used:** Around 40 min
+
+### Task 7 - The Phonebook, Step 2
+
+In this task, I needed to check whether the name entered by the user already existed in the phonebook.
+
+My first idea was to use the `filter` method, but I initially implemented the logic incorrectly by accidentally comparing an object to a string. After noticing that it wasn't working, I tried using the `map` method instead. However, I made the same logical mistake there as well.
+
+Eventually, I recognised the error in my comparison logic thru `console.log`. I returned to using `filter` and implemented the solution correctly.
+
+**Time used:** Around 20 minutes.
+
+### Task 8 - The Phonebook, Step 3
+
+In this task, I added a **number** input field to the form and extended the `person` object to include a `number` property.
+
+I reused the `onChange` handler for the name input as a template and created a similar handler for the number input.
+
+I also added validation in `onAddButtonClicked` to ensure that both the name and number fields are filled in before adding a new person. If either field is empty, an alert is displayed, and the person is not added to the phonebook.
+
+**Time used:** Around 10 minutes.
+
+### Task 9 - The Phonebook, Step 4
+
+I created a new component called `Filter` to filter the phonebook entries. I used `useState` to track the filter value and check whether it changed. Whenever the value changed, the displayed numbers would update.
+
+After some testing, I noticed that I had forgotten to handle uppercase and lowercase letters. To fix this, I used `str.toLowerCase()` to convert both strings to lowercase before checking whether one string was included in the other using `str.includes()`.
+
+After updating the code, I tested it again and noticed another issue. The `filteredPerson` state created in `App` did not update when new entries were added. Instead, I had to change the filter input before the list would refresh. I searched online for a solution, and after a while I used AI for help. That is when I learned about `useEffect`. By using `useEffect`, I was able to make the filtered list update automatically whenever the phonebook data changed.
+
+**Time used:** Around 1 hour.
+
+### Task 10 - The Phonebook, Step 5
+
+I was already using different components in separate folders before starting this task. However, I renamed the files and components so that they matched the naming convention used in the assignment.
+
+**Time used:** Around 1 minute.
+
+### Task 11 - The Phonebook, Step 6
+
+I downloaded the required package and added `json-server -p 3001 db.json` as a `server` in scripts inside `package.json`. I then used the `useEffect` hook to fetch and update the phone numbers from the JSON server when the application loaded.
+
+**Time used:** Around 10 minutes.
+
+### Task 12 - The Phonebook, Step 7
+
+I started by making a `phonebookBackend` file under the `services` folder. I am still having a bit of a hard time learning the syntax for the backend, so I looked into the lecture_follow to remember while doing it but didn't directly copy it. I changed the `App` to use the `phonebookBacked` and did the same for the `PersonsForm` too.
+
+**Time used:** Around 30 minutes.
+
+### Task 13 - The Phonebook, Step 8
+
+Already did this in the [Task 12 - The Phonebook, Step 7](#task-12---the-phonebook-step-7)
+
+**Time used:** Around 0 minutes.
+
+### Task 14 - The Phonebook, Step 9
+
+Implemented the `onDeleteButtonClicked` function to delete a person's information from the backend and update the local `persons` state after a successful deletion. I also added error handling with `catch` to display an alert if the person no longer exists on the server. Additionally, I added a `deletePhone` method to the `phonebookBackend` service to handle the delete request.
+
+```javascript
+// delete phone number
+const onDeleteButtonClicked = (id) => {
+	console.log('delete pressed:', id);
+
+	persons.map((person) => {
+		if (person.id === id) {
+			if (window.confirm(`Delete ${person.name}?`)) {
+				phonebookBackend
+					.deletePhone(person.id)
+					.then(() =>
+						setPersons(
+							persons.filter((filterPerson) => filterPerson !== person),
+						),
+					)
+					.catch(() => alert(`${person.name} doesn't exist on the server`));
+			}
+		}
+	});
+};
+```
+
+**Time used:** Around 40 minutes.
+
+### Task 14 - The Phonebook, Step 9
+
+This has been the most difficult task for me so far. The main issue was my limited knowledge of JavaScript arrays and their methods. After completing this task, I realised that before continuing with the course, I should spend some time learning more about the different array methods available in JavaScript.
+
+While working on this task, I encountered many bugs. One of the most common mistakes I made was forgetting to add a `return` statement inside arrow functions when using curly braces. Since I usually write concise arrow functions like this:
+
+```js
+arr.filter((x) => x === y);
+```
+
+I often forgot that changing it to:
+
+```js
+arr.filter((x) => {
+	console.log('smth');
+	return x === y;
+});
+```
+
+requires an explicit `return`. I caught myself making this mistake several times.
+
+Another bug I encountered was manually adding an `id` property to the object. Since `json-server` automatically generates an `id`, providing my own caused unexpected issues.
+
+After around 1 hour and 30 minutes of debugging and learning, I finally completed the task.
+
+**Time used:** Around 1 hour 30 minutes.
 
 ## Part 1 - 19.07.2026 - 23.07.2026
 

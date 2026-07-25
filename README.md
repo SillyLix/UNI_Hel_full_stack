@@ -145,6 +145,40 @@ I started by making a `phonebookBackend` file under the `services` folder. I am 
 
 **Time used:** Around 30 minutes.
 
+### Task 13 - The Phonebook, Step 8
+
+Already did this in the [Task 12 - The Phonebook, Step 7](#task-12---the-phonebook-step-7)
+
+**Time used:** Around 0 minutes.
+
+### Task 14 - The Phonebook, Step 9
+
+Implemented the `onDeleteButtonClicked` function to delete a person's information from the backend and update the local `persons` state after a successful deletion. I also added error handling with `catch` to display an alert if the person no longer exists on the server. Additionally, I added a `deletePhone` method to the `phonebookBackend` service to handle the delete request.
+
+```javascript
+// delete phone number
+const onDeleteButtonClicked = (id) => {
+	console.log('delete pressed:', id);
+
+	persons.map((person) => {
+		if (person.id === id) {
+			if (window.confirm(`Delete ${person.name}?`)) {
+				phonebookBackend
+					.deletePhone(person.id)
+					.then(() =>
+						setPersons(
+							persons.filter((filterPerson) => filterPerson !== person),
+						),
+					)
+					.catch(() => alert(`${person.name} doesn't exist on the server`));
+			}
+		}
+	});
+};
+```
+
+**Time used:** Approximately 40 minutes.
+
 ## Part 1 - 19.07.2026 - 23.07.2026
 
 ### Task 1 - Course Information, step 1

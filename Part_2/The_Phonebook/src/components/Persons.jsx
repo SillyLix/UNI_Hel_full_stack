@@ -1,13 +1,11 @@
-const Persons = ({ phoneBookArr }) => {
+const Persons = ({ person, onDeleteClicked }) => {
+	console.log(person);
+
 	return (
-		<div>
-			{phoneBookArr.map((element) => (
-				<p key={element.id}>
-					{element.name}, {element.number}
-				</p>
-			))}
-		</div>
+		<p>
+			{person.name}, {person.number}{' '}
+			<button onClick={onDeleteClicked}>delete</button>
+		</p>
 	);
 };
-
 export default Persons;

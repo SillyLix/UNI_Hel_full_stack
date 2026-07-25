@@ -7,4 +7,5 @@ const getAll = () => axios.get(url).then((response) => response.data);
 const create = (newPhonebook) =>
 	axios.post(url, newPhonebook).then((responses) => responses.data);
 
-export default { getAll, create };
+const delatePhone = (deletingID) => axios.delete(url + `/${deletingID}`);
+export default { getAll, create, delatePhone };

@@ -17,6 +17,27 @@ const App = () => {
 			setFilteredPerson(info);
 		});
 	}, []);
+
+	// delete phone number
+	const onDeleteButtonClicked = (id) => {
+		console.log('delete pressed:', id);
+
+		persons.map((person) => {
+			if (person.id === id) {
+				if (window.confirm(`delete ${person.name}`)) {
+					phonebookBackend
+						.delatePhone(person.id)
+						.then(
+							setPersons(() =>
+								persons.filter((filterPerson) => filterPerson !== person),
+							),
+						)
+						.catch(alert(`${person.name} doesn't exit on server`));
+				}
+			}
+		});
+	};
+
 	return (
 		<div>
 			<h2>Phonebook</h2>
@@ -31,7 +52,14 @@ const App = () => {
 				setFilteredPersons={setFilteredPerson}
 			/>
 			<h2>Numbers</h2>
-			<Persons phoneBookArr={filteredPersons} />
+
+			{filteredPersons.map((person) => (
+				<Persons
+					key={person.id}
+					person={person}
+					onDeleteClicked={() => onDeleteButtonClicked(person.id)}
+				/>
+			))}
 		</div>
 	);
 };

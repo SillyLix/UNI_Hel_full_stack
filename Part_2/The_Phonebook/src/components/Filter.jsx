@@ -22,6 +22,8 @@ const Filter = ({ persons, setFilteredPersons }) => {
 
 	// keep filtered persons in sync when the full persons list changes
 	useEffect(() => {
+		console.log('useEffect used');
+
 		if (newValue === '') {
 			setFilteredPersons(persons);
 		} else {

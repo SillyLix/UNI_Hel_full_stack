@@ -33,6 +33,8 @@ part_2
   - [Task 10 - The Phonebook, Step 5](#task-10---the-phonebook-step-5)
   - [Task 11 - The Phonebook, Step 6](#task-11---the-phonebook-step-6)
   - [Task 12 - The Phonebook, Step 7](#task-12---the-phonebook-step-7)
+  - [Task 13 - The Phonebook, Step 8](#task-13---the-phonebook-step-8)
+  - [Task 14 - The Phonebook, Step 9](#task-14---the-phonebook-step-9)
 - [Part 1 - 19.07.2026 - 23.07.2026](#part-1---19072026---23072026)
   - [Task 1 - Course Information, step 1](#task-1---course-information-step-1)
   - [Task 2 - Course Information, step 2](#task-2---course-information-step-2)
@@ -177,7 +179,34 @@ const onDeleteButtonClicked = (id) => {
 };
 ```
 
-**Time used:** Approximately 40 minutes.
+**Time used:** Around 40 minutes.
+
+### Task 14 - The Phonebook, Step 9
+
+This has been the most difficult task for me so far. The main issue was my limited knowledge of JavaScript arrays and their methods. After completing this task, I realised that before continuing with the course, I should spend some time learning more about the different array methods available in JavaScript.
+
+While working on this task, I encountered many bugs. One of the most common mistakes I made was forgetting to add a `return` statement inside arrow functions when using curly braces. Since I usually write concise arrow functions like this:
+
+```js
+arr.filter((x) => x === y);
+```
+
+I often forgot that changing it to:
+
+```js
+arr.filter((x) => {
+	console.log('smth');
+	return x === y;
+});
+```
+
+requires an explicit `return`. I caught myself making this mistake several times.
+
+Another bug I encountered was manually adding an `id` property to the object. Since `json-server` automatically generates an `id`, providing my own caused unexpected issues.
+
+After around 1 hour and 30 minutes of debugging and learning, I finally completed the task.
+
+**Time used:** Around 1 hour 30 minutes.
 
 ## Part 1 - 19.07.2026 - 23.07.2026
 

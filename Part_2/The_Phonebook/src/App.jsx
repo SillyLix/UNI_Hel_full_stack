@@ -32,7 +32,7 @@ const App = () => {
 								persons.filter((filterPerson) => filterPerson !== person),
 							),
 						)
-						.catch(alert(`${person.name} doesn't exit on server`));
+						.catch((error) => alert(`${person.name} doesn't exit on server`));
 				}
 			}
 		});

@@ -1,6 +1,4 @@
 const Persons = ({ person, onDeleteClicked }) => {
-	console.log(person);
-
 	return (
 		<p>
 			{person.name}, {person.number}{' '}

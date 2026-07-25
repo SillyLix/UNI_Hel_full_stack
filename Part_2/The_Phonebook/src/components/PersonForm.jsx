@@ -17,20 +17,47 @@ const PersonForm = ({ persons, setPersons, setFilteredPersons }) => {
 
 		// check if the person exists and add if don't
 		const filteredPersons = persons.filter(
-			(element) => element.name.toLowerCase() === newName.toLowerCase(),
+			(element) =>
+				element.name.toLowerCase().trim() === newName.toLowerCase().trim(),
 		);
 
 		if (filteredPersons.length === 0) {
 			const data = {
 				name: newName,
 				number: newNumber,
-				id: persons.length + 1,
 			};
 
 			phonebookBackend.create(data).then((response) => {
-				setPersons(persons.concat(data));
+				setPersons(persons.concat(response));
 			});
-		} else window.alert(`${newName} is already added to phonebook`);
+		} else {
+			console.log(filteredPersons);
+
+			if (
+				window.confirm(
+					`${newName} is already added to the phonebook, replace the old number with a new number`,
+				)
+			) {
+				const data = {
+					name: newName,
+					number: newNumber,
+				};
+
+				filteredPersons.map((element) => {
+					console.log(element);
+
+					return phonebookBackend
+						.update(element.id, data)
+						.then((response) =>
+							setPersons(
+								persons.map((person) =>
+									person.id === element.id ? response : person,
+								),
+							),
+						);
+				});
+			}
+		}
 	};
 
 	const handleNameInputChange = (event) => setNewName(event.target.value);

@@ -31,15 +31,17 @@ const App = () => {
 			if (person.id === id) {
 				if (window.confirm(`delete ${person.name}`)) {
 					phonebookBackend
+						// delete
 						.delatePhone(person.id)
 						.then(
 							setPersons(() =>
 								persons.filter((filterPerson) => filterPerson !== person),
 							),
 						)
+						// show error msg
 						.catch((error) => {
 							setNoteMessage({
-								message: `${person.name} doesn't exit on server`,
+								message: `Information of ${person.name} has already been removed from server`,
 								isError: true,
 							});
 							setTimeout(() => {

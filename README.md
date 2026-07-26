@@ -10,6 +10,7 @@ Part_0
     (other files needed in task e.g. html, css, js, md ...)
   Course Name
   Course Name
+  Lecture_Follow (This is a project where I do the stuff shown in lecture aka chapters.)
 part_1
   ...
 part_2
@@ -35,7 +36,8 @@ part_2
   - [Task 12 - The Phonebook, Step 7](#task-12---the-phonebook-step-7)
   - [Task 13 - The Phonebook, Step 8](#task-13---the-phonebook-step-8)
   - [Task 14 - The Phonebook, Step 9](#task-14---the-phonebook-step-9)
-  - [Task 15 - The Phonebook, Step 1+](#task-15---the-phonebook-step-10)
+  - [Task 15 - The Phonebook, Step 10](#task-15---the-phonebook-step-10)
+  - [Task 16 - The Phonebook, Step 11](#task-16---the-phonebook-step-11)
 - [Part 1 - 19.07.2026 - 23.07.2026](#part-1---19072026---23072026)
   - [Task 1 - Course Information, step 1](#task-1---course-information-step-1)
   - [Task 2 - Course Information, step 2](#task-2---course-information-step-2)
@@ -208,6 +210,12 @@ Another bug I encountered was manually adding an `id` property to the object. Si
 After around 1 hour and 30 minutes of debugging and learning, I finally completed the task.
 
 **Time used:** Around 1 hour 30 minutes.
+
+### Task 16 - The Phonebook, Step 11
+
+I used `useState` and `Notification.css` to display notifications defined in `Notification.jsx`. The `Notification` component is a simple component that returns a `<div>` containing the notification message.
+
+**Time used:** Around 10 minutes.
 
 ## Part 1 - 19.07.2026 - 23.07.2026
 

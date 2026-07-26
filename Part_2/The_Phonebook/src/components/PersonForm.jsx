@@ -1,9 +1,15 @@
 import { useState } from 'react';
 import phonebookBackend from '../services/phonebookBackend';
 
-const PersonForm = ({ persons, setPersons, setFilteredPersons }) => {
+const PersonForm = ({
+	persons,
+	setPersons,
+	setFilteredPersons,
+	setNoteMessage,
+}) => {
 	const [newName, setNewName] = useState('');
 	const [newNumber, setNewNumber] = useState('');
+	const messageTimeout = 3000;
 
 	const onAddButtonClicked = (event) => {
 		console.log(event);
@@ -28,7 +34,13 @@ const PersonForm = ({ persons, setPersons, setFilteredPersons }) => {
 			};
 
 			phonebookBackend.create(data).then((response) => {
-				setPersons(persons.concat(response));
+				setNoteMessage(
+					`Added ${response.name} with phone number ${response.number}`,
+				);
+				setTimeout(() => {
+					setNoteMessage(null);
+				}, messageTimeout);
+				return setPersons(persons.concat(response));
 			});
 		} else {
 			console.log(filteredPersons);
@@ -46,15 +58,19 @@ const PersonForm = ({ persons, setPersons, setFilteredPersons }) => {
 				filteredPersons.map((element) => {
 					console.log(element);
 
-					return phonebookBackend
-						.update(element.id, data)
-						.then((response) =>
-							setPersons(
-								persons.map((person) =>
-									person.id === element.id ? response : person,
-								),
+					return phonebookBackend.update(element.id, data).then((response) => {
+						setNoteMessage(
+							`Changed number to ${response.number} for ${response.name}`,
+						);
+						setTimeout(() => {
+							setNoteMessage(null);
+						}, messageTimeout);
+						return setPersons(
+							persons.map((person) =>
+								person.id === element.id ? response : person,
 							),
 						);
+					});
 				});
 			}
 		}

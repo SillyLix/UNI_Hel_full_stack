@@ -38,6 +38,7 @@ part_2
   - [Task 14 - The Phonebook, Step 9](#task-14---the-phonebook-step-9)
   - [Task 15 - The Phonebook, Step 10](#task-15---the-phonebook-step-10)
   - [Task 16 - The Phonebook, Step 11](#task-16---the-phonebook-step-11)
+  - [Task 17 - The Phonebook, Step 12](#task-17---the-phonebook-step-12)
 - [Part 1 - 19.07.2026 - 23.07.2026](#part-1---19072026---23072026)
   - [Task 1 - Course Information, step 1](#task-1---course-information-step-1)
   - [Task 2 - Course Information, step 2](#task-2---course-information-step-2)
@@ -217,6 +218,29 @@ I used `useState` and `Notification.css` to display notifications defined in `No
 
 **Time used:** Around 10 minutes.
 
+### Task 16 - The Phonebook, Step 11
+
+Changed the `noteMessage` to be an object.
+
+```js
+{
+		message: null,
+		isError: false,
+}
+```
+
+Afterwards, I added a simple if statement and CSS with a red colour to change the notification colour.
+
+```js
+const Notification = ({ note = {} }) => {
+	if (note.message === null) return;
+	else if (note.isError) return <div className="error">{note.message}</div>;
+	else return <div className="note">{note.message}</div>;
+};
+```
+
+**Time used:** Around 20 minutes.
+
 ## Part 1 - 19.07.2026 - 23.07.2026
 
 ### Task 1 - Course Information, step 1
@@ -293,7 +317,7 @@ Made a new project for Anecdotes and added functionality to display a random ane
 
 ### Task 13 - Anecdotes, step 2
 
-Added the ability to vote. My first thought on this went to using an object. I made an object `votes` with the use of `useState`. My thought was to connect each quote to each object. When I did this, the main hurdle I had was learning how I could turn a variable to work as an object's key. <br><br>
+Added the ability to vote. My first thought on this went to using an object. I created an object `votes` using `useState`. My thought was to connect each quote to each object. When I did this, the main hurdle I had was learning how I could turn a variable to work as an object's key. <br><br>
 But this idea does look quite bad since if we were to add more quotes, it wouldn't be dynamic; as such, I started working to make the same thing but with an array that could be made bigger dynamically. Tho even in the current version, if more quotes were to be added mid-run, it would not work as intended, but since that is not of concern right now, I am overlooking it. <br><br>
 Both version is commited in GitHub with "task 13 with objects" and "task 13 with Array"
 
@@ -336,3 +360,7 @@ Learnt about Mermaid and Git terminal commands, then used Mermaid to create the 
 Created a diagram showing the requests sent by the SPA and the responses returned by the server.
 
 **Time used:** Around 25 minutes
+
+```
+
+```

@@ -34,11 +34,15 @@ const PersonForm = ({
 			};
 
 			phonebookBackend.create(data).then((response) => {
-				setNoteMessage(
-					`Added ${response.name} with phone number ${response.number}`,
-				);
+				setNoteMessage({
+					message: `Added ${response.name} with phone number ${response.number}`,
+					isError: false,
+				});
 				setTimeout(() => {
-					setNoteMessage(null);
+					setNoteMessage({
+						message: null,
+						isError: false,
+					});
 				}, messageTimeout);
 				return setPersons(persons.concat(response));
 			});
@@ -59,11 +63,15 @@ const PersonForm = ({
 					console.log(element);
 
 					return phonebookBackend.update(element.id, data).then((response) => {
-						setNoteMessage(
-							`Changed number to ${response.number} for ${response.name}`,
-						);
+						setNoteMessage({
+							message: `Changed number to ${response.number} for ${response.name}`,
+							isError: false,
+						});
 						setTimeout(() => {
-							setNoteMessage(null);
+							setNoteMessage({
+								message: null,
+								isError: false,
+							});
 						}, messageTimeout);
 						return setPersons(
 							persons.map((person) =>

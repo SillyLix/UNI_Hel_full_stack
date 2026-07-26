@@ -10,7 +10,10 @@ const App = () => {
 	// The reason for two is that I wanted to save the filtered people deferent
 	const [persons, setPersons] = useState([]);
 	const [filteredPersons, setFilteredPerson] = useState([]);
-	const [noteMessage, setNoteMessage] = useState(null);
+	const [noteMessage, setNoteMessage] = useState({
+		message: null,
+		isError: false,
+	});
 
 	// get data from server
 	useEffect(() => {
@@ -34,7 +37,18 @@ const App = () => {
 								persons.filter((filterPerson) => filterPerson !== person),
 							),
 						)
-						.catch((error) => alert(`${person.name} doesn't exit on server`));
+						.catch((error) => {
+							setNoteMessage({
+								message: `${person.name} doesn't exit on server`,
+								isError: true,
+							});
+							setTimeout(() => {
+								setNoteMessage({
+									message: null,
+									isError: false,
+								});
+							}, 3000);
+						});
 				}
 			}
 		});

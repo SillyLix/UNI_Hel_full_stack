@@ -273,6 +273,14 @@ When the **Show** button is clicked, it clears `filteredCountries` and adds the 
 
 This approach also correctly handles countries whose names are contained within other country names, such as **Sudan**.
 
+**Time spent:** Around 20 minutes.
+
+### Task 20 – Data for Countries, Step 3
+
+I made an account on OpenWeather and used it's api to show the weather in the app. I had a problem because I used the wrong API version, '4.0' instead of '2.5', but after I figured it out, it was easy to change.
+
+**Time spent:** Around 20 minutes.
+
 ## Part 1 - 19.07.2026 - 23.07.2026
 
 ### Task 1 - Course Information, step 1

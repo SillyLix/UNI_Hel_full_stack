@@ -39,6 +39,7 @@ part_2
   - [Task 15 - The Phonebook, Step 10](#task-15---the-phonebook-step-10)
   - [Task 16 - The Phonebook, Step 11](#task-16---the-phonebook-step-11)
   - [Task 17 - The Phonebook, Step 12](#task-17---the-phonebook-step-12)
+  - [Task 18 – Data for Countries, Step 1](#task-18--data-for-countries-step-1)
 - [Part 1 - 19.07.2026 - 23.07.2026](#part-1---19072026---23072026)
   - [Task 1 - Course Information, step 1](#task-1---course-information-step-1)
   - [Task 2 - Course Information, step 2](#task-2---course-information-step-2)
@@ -218,7 +219,7 @@ I used `useState` and `Notification.css` to display notifications defined in `No
 
 **Time used:** Around 10 minutes.
 
-### Task 16 - The Phonebook, Step 11
+### Task 17 - The Phonebook, Step 12
 
 Changed the `noteMessage` to be an object.
 
@@ -240,6 +241,29 @@ const Notification = ({ note = {} }) => {
 ```
 
 **Time used:** Around 20 minutes.
+
+### Task 18 – Data for Countries, Step 1
+
+I added two `useState` hooks:
+
+```js
+const [countries, setCountries] = useState([]);
+const [filterCountries, setFilterCountries] = useState([]);
+```
+
+First, I fetched all the data from the API and stored it in `countries`:
+
+```js
+useEffect(() => {
+	backend.getAll().then((response) => {
+		setCountries(response);
+	});
+}, []);
+```
+
+After that, I used the `CountriesInput.jsx` component to handle user input and update `filterCountries`. Finally, the `ShowCountries.jsx` component displays information about the matching countries. It uses `if`/`else` conditions to determine what information to show based on the current state.
+
+**Time spent:** Around 40 minutes.
 
 ## Part 1 - 19.07.2026 - 23.07.2026
 

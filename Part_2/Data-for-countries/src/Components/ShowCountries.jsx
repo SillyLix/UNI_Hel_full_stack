@@ -1,5 +1,6 @@
 import backend from '../services/backend';
 import { useState, useEffect } from 'react';
+import './showCountries.css';
 
 const ShowCountryFullInfo = ({ country }) => {
 	console.log(country);
@@ -64,32 +65,36 @@ const ShowCountryFullInfo = ({ country }) => {
 	const iconLink = `https://openweathermap.org/payload/api/media/file/${tempInfo.weather[0].icon}.png`;
 	return (
 		<div>
-			<h1>{country.name.common}</h1>
 			<div>
-				Capital {country.capital} <br />
-				Area {country.area}
+				<h1>{country.name.common}</h1>
+				Capital: {country.capital} <br />
+				Area: {country.area}
 			</div>
-			<h1>Languages</h1>
+			<div>
+				<h1>Languages</h1>
 
-			<ul>
 				{Object.entries(country.languages).map(([key, value]) => (
-					<li key={key}>{value}</li>
+					<p key={key}>{value}</p>
 				))}
-			</ul>
+			</div>
 
 			<img
-				src={country.flags.png}
+				className="flagImg"
+				src={country.flags.svg}
 				alt={country.flags.alt}
 			/>
 
 			<div>
 				<h1>Weather in {country.name.common}</h1>
 				<p>Temperature {tempInfo.main.temp}</p>
+				<p>feels like {tempInfo.main.feels_like}</p>
 				<img
 					src={iconLink}
 					alt="weather icon"
 				/>
-				<p>wind {tempInfo.wind.speed} m/s</p>
+				<p>
+					wind {tempInfo.wind.speed} m/s, weather: {tempInfo.weather[0].main}
+				</p>
 			</div>
 		</div>
 	);

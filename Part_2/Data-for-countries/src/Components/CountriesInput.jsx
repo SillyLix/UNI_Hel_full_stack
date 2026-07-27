@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import './input.css';
 
 const CountriesInput = ({ countries, setFilteredCountries }) => {
 	const [newText, setNewText] = useState('');
@@ -17,8 +18,9 @@ const CountriesInput = ({ countries, setFilteredCountries }) => {
 
 	return (
 		<>
-			find countries{' '}
+			<h2>find countries: </h2>
 			<input
+				className="inputFiled"
 				type="text"
 				value={newText}
 				onChange={handelTextChanged}

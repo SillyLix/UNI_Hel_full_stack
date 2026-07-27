@@ -1,0 +1,23 @@
+.inputFiled {
+    padding: 0.4em;
+    margin: 0.1em;
+    background-color: rgb(227, 231, 222);
+    border: 0px;
+    border-radius: 25px;
+    transition: 0.05s;
+
+    border:  2px solid rgb(227, 243, 208);
+}
+
+.inputFiled:hover{
+    padding: 0.5em;
+    background-color: rgb(84, 84, 102);
+    color: rgb(255, 255, 255);
+}
+
+.inputFiled:active{
+        padding: 0.5em;
+            background-color: rgb(84, 84, 102);
+            color: rgb(255, 255, 255);
+}
+

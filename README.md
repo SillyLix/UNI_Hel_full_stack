@@ -20,6 +20,7 @@ part_2
 # Dates and Documentation
 
 ## Table of Contents
+
 - [Part 2 - 23.07.2026 - xx](#part-2---23072026---xx)
   - [Task 1 - Course Information, step 6](#task-1---course-information-step-6)
   - [Task 2 - Course Information, step 7](#task-2---course-information-step-7)
@@ -41,6 +42,8 @@ part_2
   - [Task 18 – Data for Countries, Step 1](#task-18--data-for-countries-step-1)
   - [Task 19 – Data for Countries, Step 2](#task-19--data-for-countries-step-2)
   - [Task 20 – Data for Countries, Step 3](#task-20--data-for-countries-step-3)
+  - [Extra, Data for Countries](#Extra-Data-for-Countries)
+
 - [Part 1 - 19.07.2026 - 23.07.2026](#part-1---19072026---23072026)
   - [Task 1 - Course Information, step 1](#task-1---course-information-step-1)
   - [Task 2 - Course Information, step 2](#task-2---course-information-step-2)
@@ -279,6 +282,12 @@ This approach also correctly handles countries whose names are contained within 
 ### Task 20 – Data for Countries, Step 3
 
 I made an account on OpenWeather and used it's api to show the weather in the app. I had a problem because I used the wrong API version, '4.0' instead of '2.5', but after I figured it out, it was easy to change.
+
+**Time spent:** Around 20 minutes.
+
+### Extra, Data for Countries
+
+I added css to make it look a bit better and also added a bit more information.
 
 **Time spent:** Around 20 minutes.
 

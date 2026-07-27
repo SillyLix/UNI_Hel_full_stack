@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import ShowCountries from './Components/ShowCountries';
 import CountriesInput from './Components/CountriesInput';
 import backend from './services/backend';
+import './index.css';
 
 function App() {
 	const [countries, setCountries] = useState([]);

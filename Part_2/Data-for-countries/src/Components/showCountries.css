@@ -1,0 +1,23 @@
+li {
+    list-style: none;
+}
+
+.flagImg{
+    width: 30%;
+    height: 40%;
+    margin: 0.5em;
+    padding: 1em;
+    background-color: whitesmoke;
+    border-radius: 25px;
+}
+
+@media (max-width: 768px) {
+.flagImg {
+        width: 90%;
+        height: 40%;
+        margin: 0.5em;
+        padding: 1em;
+        background-color: whitesmoke;
+        border-radius: 25px;
+    }
+}

@@ -5,7 +5,7 @@ import backend from './services/backend';
 
 function App() {
 	const [countries, setCountries] = useState([]);
-	const [filterCountries, setFilterCountries] = useState([]);
+	const [filteredCountries, setFilterCountries] = useState([]);
 
 	useEffect(() => {
 		backend.getAll().then((response) => {
@@ -19,7 +19,10 @@ function App() {
 				countries={countries}
 				setFilteredCountries={setFilterCountries}
 			/>
-			<ShowCountries filteredCountries={filterCountries} />
+			<ShowCountries
+				filteredCountries={filteredCountries}
+				setFilterCountries={setFilterCountries}
+			/>
 		</div>
 	);
 }

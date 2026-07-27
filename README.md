@@ -39,7 +39,7 @@ part_2
   - [Task 15 - The Phonebook, Step 10](#task-15---the-phonebook-step-10)
   - [Task 16 - The Phonebook, Step 11](#task-16---the-phonebook-step-11)
   - [Task 17 - The Phonebook, Step 12](#task-17---the-phonebook-step-12)
-  - [Task 18 – Data for Countries, Step 1](#task-18--data-for-countries-step-1)
+- [Task 18 – Data for Countries, Step 1](#task-18--data-for-countries-step-1)
 - [Part 1 - 19.07.2026 - 23.07.2026](#part-1---19072026---23072026)
   - [Task 1 - Course Information, step 1](#task-1---course-information-step-1)
   - [Task 2 - Course Information, step 2](#task-2---course-information-step-2)
@@ -261,9 +261,17 @@ useEffect(() => {
 }, []);
 ```
 
-After that, I used the `CountriesInput.jsx` component to handle user input and update `filterCountries`. Finally, the `ShowCountries.jsx` component displays information about the matching countries. It uses `if`/`else` conditions to determine what information to show based on the current state.
+After that, I used the `CountriesInput.jsx` component to handle user input and update `filteredCountries`. Finally, the `ShowCountries.jsx` component displays information about the matching countries. It uses `if`/`else` conditions to determine what information to show based on the current state.
 
 **Time spent:** Around 40 minutes.
+
+### Task 19 – Data for Countries, Step 2
+
+I created a separate `ShowCountryFullInfo` component inside `CountriesInput.jsx`. `ShowCountryFullInfo` takes `country` as a prop and displays the full country information.
+
+When the **Show** button is clicked, it clears `filteredCountries` and adds the selected `country` to it. This refreshes the component and displays the full country information.
+
+This approach also correctly handles countries whose names are contained within other country names, such as **Sudan**.
 
 ## Part 1 - 19.07.2026 - 23.07.2026
 

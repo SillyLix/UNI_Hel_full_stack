@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 const CountriesInput = ({ countries, setFilteredCountries }) => {
 	const [newText, setNewText] = useState('');

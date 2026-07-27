@@ -10,7 +10,7 @@ Part_0
     (other files needed in task e.g. html, css, js, md ...)
   Course Name
   Course Name
-  Lecture_Follow (This is a project where I do the stuff shown in lecture aka chapters.)
+  Lecture_Follow (This is a project where I do the stuff shown in lecture, aka chapters.)
 part_1
   ...
 part_2
@@ -40,7 +40,7 @@ part_2
   - [Task 17 - The Phonebook, Step 12](#task-17---the-phonebook-step-12)
   - [Task 18 – Data for Countries, Step 1](#task-18--data-for-countries-step-1)
   - [Task 19 – Data for Countries, Step 2](#task-19--data-for-countries-step-2)
-  - [Task 20 – Data for Countries, Step 3](#task-10--data-for-countries-step-3)
+  - [Task 20 – Data for Countries, Step 3](#task-20--data-for-countries-step-3)
 - [Part 1 - 19.07.2026 - 23.07.2026](#part-1---19072026---23072026)
   - [Task 1 - Course Information, step 1](#task-1---course-information-step-1)
   - [Task 2 - Course Information, step 2](#task-2---course-information-step-2)

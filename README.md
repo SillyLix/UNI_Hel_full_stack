@@ -10,6 +10,7 @@ Part_0
     (other files needed in task e.g. html, css, js, md ...)
   Course Name
   Course Name
+  Lecture_Follow (This is a project where I do the stuff shown in lecture aka chapters.)
 part_1
   ...
 part_2
@@ -19,7 +20,6 @@ part_2
 # Dates and Documentation
 
 ## Table of Contents
-
 - [Part 2 - 23.07.2026 - xx](#part-2---23072026---xx)
   - [Task 1 - Course Information, step 6](#task-1---course-information-step-6)
   - [Task 2 - Course Information, step 7](#task-2---course-information-step-7)
@@ -36,6 +36,11 @@ part_2
   - [Task 13 - The Phonebook, Step 8](#task-13---the-phonebook-step-8)
   - [Task 14 - The Phonebook, Step 9](#task-14---the-phonebook-step-9)
   - [Task 15 - The Phonebook, Step 10](#task-15---the-phonebook-step-10)
+  - [Task 16 - The Phonebook, Step 11](#task-16---the-phonebook-step-11)
+  - [Task 17 - The Phonebook, Step 12](#task-17---the-phonebook-step-12)
+  - [Task 18 – Data for Countries, Step 1](#task-18--data-for-countries-step-1)
+  - [Task 19 – Data for Countries, Step 2](#task-19--data-for-countries-step-2)
+  - [Task 20 – Data for Countries, Step 3](#task-10--data-for-countries-step-3)
 - [Part 1 - 19.07.2026 - 23.07.2026](#part-1---19072026---23072026)
   - [Task 1 - Course Information, step 1](#task-1---course-information-step-1)
   - [Task 2 - Course Information, step 2](#task-2---course-information-step-2)
@@ -209,6 +214,74 @@ After around 1 hour and 30 minutes of debugging and learning, I finally complete
 
 **Time used:** Around 1 hour 30 minutes.
 
+### Task 16 - The Phonebook, Step 11
+
+I used `useState` and `Notification.css` to display notifications defined in `Notification.jsx`. The `Notification` component is a simple component that returns a `<div>` containing the notification message.
+
+**Time used:** Around 10 minutes.
+
+### Task 17 - The Phonebook, Step 12
+
+Changed the `noteMessage` to be an object.
+
+```js
+{
+		message: null,
+		isError: false,
+}
+```
+
+Afterwards, I added a simple if statement and CSS with a red colour to change the notification colour.
+
+```js
+const Notification = ({ note = {} }) => {
+	if (note.message === null) return;
+	else if (note.isError) return <div className="error">{note.message}</div>;
+	else return <div className="note">{note.message}</div>;
+};
+```
+
+**Time used:** Around 20 minutes.
+
+### Task 18 – Data for Countries, Step 1
+
+I added two `useState` hooks:
+
+```js
+const [countries, setCountries] = useState([]);
+const [filterCountries, setFilterCountries] = useState([]);
+```
+
+First, I fetched all the data from the API and stored it in `countries`:
+
+```js
+useEffect(() => {
+	backend.getAll().then((response) => {
+		setCountries(response);
+	});
+}, []);
+```
+
+After that, I used the `CountriesInput.jsx` component to handle user input and update `filteredCountries`. Finally, the `ShowCountries.jsx` component displays information about the matching countries. It uses `if`/`else` conditions to determine what information to show based on the current state.
+
+**Time spent:** Around 40 minutes.
+
+### Task 19 – Data for Countries, Step 2
+
+I created a separate `ShowCountryFullInfo` component inside `CountriesInput.jsx`. `ShowCountryFullInfo` takes `country` as a prop and displays the full country information.
+
+When the **Show** button is clicked, it clears `filteredCountries` and adds the selected `country` to it. This refreshes the component and displays the full country information.
+
+This approach also correctly handles countries whose names are contained within other country names, such as **Sudan**.
+
+**Time spent:** Around 20 minutes.
+
+### Task 20 – Data for Countries, Step 3
+
+I made an account on OpenWeather and used it's api to show the weather in the app. I had a problem because I used the wrong API version, '4.0' instead of '2.5', but after I figured it out, it was easy to change.
+
+**Time spent:** Around 20 minutes.
+
 ## Part 1 - 19.07.2026 - 23.07.2026
 
 ### Task 1 - Course Information, step 1
@@ -285,7 +358,7 @@ Made a new project for Anecdotes and added functionality to display a random ane
 
 ### Task 13 - Anecdotes, step 2
 
-Added the ability to vote. My first thought on this went to using an object. I made an object `votes` with the use of `useState`. My thought was to connect each quote to each object. When I did this, the main hurdle I had was learning how I could turn a variable to work as an object's key. <br><br>
+Added the ability to vote. My first thought on this went to using an object. I created an object `votes` using `useState`. My thought was to connect each quote to each object. When I did this, the main hurdle I had was learning how I could turn a variable to work as an object's key. <br><br>
 But this idea does look quite bad since if we were to add more quotes, it wouldn't be dynamic; as such, I started working to make the same thing but with an array that could be made bigger dynamically. Tho even in the current version, if more quotes were to be added mid-run, it would not work as intended, but since that is not of concern right now, I am overlooking it. <br><br>
 Both version is commited in GitHub with "task 13 with objects" and "task 13 with Array"
 
@@ -328,3 +401,7 @@ Learnt about Mermaid and Git terminal commands, then used Mermaid to create the 
 Created a diagram showing the requests sent by the SPA and the responses returned by the server.
 
 **Time used:** Around 25 minutes
+
+```
+
+```

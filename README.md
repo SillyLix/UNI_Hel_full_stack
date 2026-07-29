@@ -21,7 +21,9 @@ part_2
 
 ## Table of Contents
 
-- [Part 2 - 23.07.2026 - xx](#part-2---23072026---xx)
+- [Part 3 - 29.07.2026 - xx](#part-3---29072026---xx)
+  - [Task 1 - Phonebook backend, step 1](#task-1---Phonebook-backend-step-1)
+- [Part 2 - 23.07.2026 - 27.07.2026](#part-2---23072026---27072026)
   - [Task 1 - Course Information, step 6](#task-1---course-information-step-6)
   - [Task 2 - Course Information, step 7](#task-2---course-information-step-7)
   - [Task 3 - Course Information, step 8](#task-3---course-information-step-8)
@@ -64,7 +66,25 @@ part_2
   - [Task 4 - New note diagram](#task-4---new-note-diagram)
   - [Task 5 - Single page app diagram](#task-5---single-page-app-diagram)
 
-## Part 2 - 23.07.2026 - xx
+## Part 3 - 29.07.2026 - xx
+
+### Task 1 - Phonebook backend, step 1
+
+started with `node init` to make a project. I installed `express` and added `dev` and `start` in `package.json`.
+
+```json
+  "scripts": {
+    "dev": "node --watch index.js",
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+```
+
+I coded the get method in `index.js`. At the end also added `.gitignore` so not all the stuff would be added in github.
+
+**Time used:** Around 10 min
+
+## Part 2 - 23.07.2026 - 27.07.2026
 
 ### Task 1 - Course Information, step 6
 

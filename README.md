@@ -20,6 +20,7 @@ part_2
 # Dates and Documentation
 
 ## Table of Contents
+
 - [Part 2 - 23.07.2026 - xx](#part-2---23072026---xx)
   - [Task 1 - Course Information, step 6](#task-1---course-information-step-6)
   - [Task 2 - Course Information, step 7](#task-2---course-information-step-7)

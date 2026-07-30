@@ -28,6 +28,8 @@ part_2
   - [Task 3 - Phonebook backend, step 3](#task-3---phonebook-backend-step-3)
   - [Task 4 - Phonebook backend, step 4](#task-4---phonebook-backend-step-4)
   - [Task 5 and 6 - Phonebook backend, step 5 and 6](#task-5-and-6---phonebook-backend-step-5-and-6)
+  - [Task 7 - Phonebook backend, step 7](#task-7---phonebook-backend-step-7)
+  - [Task 8 - Phonebook backend, step 8](#task-8---phonebook-backend-step-8)
 - [Part 2 - 23.07.2026 - 27.07.2026](#part-2---23072026---27072026)
   - [Task 1 - Course Information, step 6](#task-1---course-information-step-6)
   - [Task 2 - Course Information, step 7](#task-2---course-information-step-7)
@@ -170,6 +172,25 @@ app.post('/api/persons', (request, response) => {
 Added an `app.use(morgen('tiny'))` to use the morgan middleware.
 
 **Time used:** Around 5 min
+
+### Task 8 - Phonebook backend, step 8
+
+changed `app.use(morgen('tiny'))` to
+
+```js
+morgan.token('postData', (req, res) => {
+	return JSON.stringify(req.body);
+});
+app.use(
+	morgan(
+		`:method :url :status :res[content-length] - :response-time ms :postData`,
+	),
+);
+```
+
+this creates a new token that returns the body of the request in string and that is logged into console by morgan
+
+**Time used:** Around 20 min
 
 ## Part 2 - 23.07.2026 - 27.07.2026
 

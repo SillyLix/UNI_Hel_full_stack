@@ -5,10 +5,10 @@ GET http://localhost:3001/info
 GET http://localhost:3001/api/persons
 
 ### get one data from specific id
-GET  http://localhost:3001/api/persons/RuIQEgX7Yb
+GET  http://localhost:3001/api/persons/4
 
 ### get one data from specific id
-DELETE http://localhost:3001/api/persons/RuIQEgX7Yb
+DELETE http://localhost:3001/api/persons/4
 
 ### post data
 

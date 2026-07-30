@@ -3,7 +3,14 @@ const morgan = require('morgan');
 const app = express();
 
 app.use(express.json());
-app.use(morgan('tiny'));
+morgan.token('postData', (req, res) => {
+	return JSON.stringify(req.body);
+});
+app.use(
+	morgan(
+		`:method :url :status :res[content-length] - :response-time ms :postData`,
+	),
+);
 
 let phoneNumbers = [
 	{
@@ -31,8 +38,8 @@ let phoneNumbers = [
 const infoPage = `
 <div>
 	<p>Phonebook has info for ${phoneNumbers.length} people </p>
-	<p>${new Date()}</p>
-</div>`;
+	<p>${new Date()}</p></div>
+`;
 
 const GenerateRandomID = () => {
 	const IDkeys =
@@ -45,7 +52,7 @@ const GenerateRandomID = () => {
 	}
 
 	if (phoneNumbers.find((number) => number.id === ID)) {
-		GenerateRandomID();
+		return GenerateRandomID();
 	} else return ID;
 };
 

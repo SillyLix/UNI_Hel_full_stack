@@ -26,17 +26,27 @@ const phoneNumber = [
 	},
 ];
 
-app.get('/api/persons', (request, response) => {
-	response.json(phoneNumber);
-});
-
 const infoPage = `
 <div>
 	<p>Phonebook has info for ${phoneNumber.length} people </p>
 	<p>${new Date()}</p>
 </div>`;
+
+app.get('/api/persons', (request, response) => {
+	response.json(phoneNumber);
+});
+
 app.get('/info', (request, response) => {
 	response.send(infoPage);
+});
+
+app.get('/api/persons/:id', (request, response) => {
+	const id = request.params.id;
+	const number = phoneNumber.find((num) => num.id === id);
+
+	if (number) {
+		response.json(number);
+	} else response.status(404).end();
 });
 
 const PORT = 3001;

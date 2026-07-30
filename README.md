@@ -25,6 +25,7 @@ part_2
   - [Task 1 - Phonebook backend, step 1](#task-1---Phonebook-backend-step-1)
   - [Task 2 - Phonebook backend, step 2](#task-2---Phonebook-backend-step-2)
   - [Task 3 - Phonebook backend, step 3](#task-3---Phonebook-backend-step-3)
+  - [Task 4 - Phonebook backend, step 4](#task-4---Phonebook-backend-step-4)
 - [Part 2 - 23.07.2026 - 27.07.2026](#part-2---23072026---27072026)
   - [Task 1 - Course Information, step 6](#task-1---course-information-step-6)
   - [Task 2 - Course Information, step 7](#task-2---course-information-step-7)
@@ -97,6 +98,12 @@ Added an new `app.get()` request to get an info page on `/info`.
 Added an new `app.get()` request to get an data from one id page on `/persons/id`.
 
 **Time used:** Around 5 min
+
+### Task 4 - Phonebook backend, step 4
+
+added an `app.delete` to delete a data from specific id.
+
+**Time used:** Around 10 min
 
 ## Part 2 - 23.07.2026 - 27.07.2026
 

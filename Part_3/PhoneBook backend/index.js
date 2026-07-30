@@ -3,7 +3,7 @@ const app = express();
 
 app.use(express.json());
 
-const phoneNumber = [
+let phoneNumber = [
 	{
 		id: '1',
 		name: 'Arto Hellas',
@@ -32,6 +32,7 @@ const infoPage = `
 	<p>${new Date()}</p>
 </div>`;
 
+// get requests.
 app.get('/api/persons', (request, response) => {
 	response.json(phoneNumber);
 });
@@ -47,6 +48,15 @@ app.get('/api/persons/:id', (request, response) => {
 	if (number) {
 		response.json(number);
 	} else response.status(404).end();
+});
+
+// delete request
+
+app.delete('/api/persons/:id', (request, response) => {
+	const id = request.params.id;
+	phoneNumber = phoneNumber.filter((number) => number.id !== id);
+
+	response.status(204).end();
 });
 
 const PORT = 3001;

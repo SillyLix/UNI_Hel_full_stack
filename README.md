@@ -22,10 +22,12 @@ part_2
 ## Table of Contents
 
 - [Part 3 - 29.07.2026 - xx](#part-3---29072026---xx)
-  - [Task 1 - Phonebook backend, step 1](#task-1---Phonebook-backend-step-1)
-  - [Task 2 - Phonebook backend, step 2](#task-2---Phonebook-backend-step-2)
-  - [Task 3 - Phonebook backend, step 3](#task-3---Phonebook-backend-step-3)
-  - [Task 4 - Phonebook backend, step 4](#task-4---Phonebook-backend-step-4)
+- [Part 3 - 29.07.2026 - xx](#part-3---29072026---xx)
+  - [Task 1 - Phonebook backend, step 1](#task-1---phonebook-backend-step-1)
+  - [Task 2 - Phonebook backend, step 2](#task-2---phonebook-backend-step-2)
+  - [Task 3 - Phonebook backend, step 3](#task-3---phonebook-backend-step-3)
+  - [Task 4 - Phonebook backend, step 4](#task-4---phonebook-backend-step-4)
+  - [Task 5 and 6 - Phonebook backend, step 5 and 6](#task-5-and-6---phonebook-backend-step-5-and-6)
 - [Part 2 - 23.07.2026 - 27.07.2026](#part-2---23072026---27072026)
   - [Task 1 - Course Information, step 6](#task-1---course-information-step-6)
   - [Task 2 - Course Information, step 7](#task-2---course-information-step-7)
@@ -104,6 +106,64 @@ Added an new `app.get()` request to get an data from one id page on `/persons/id
 added an `app.delete` to delete a data from specific id.
 
 **Time used:** Around 10 min
+
+### Task 5 and 6 - Phonebook backend, step 5 and 6
+
+Implemented an `app.post()` route that allows new phonebook entries to be added to the server. I also created a `GenerateRandomID()` function that generates a random ID and checks whether it already exists. If a duplicate ID is found, the function recursively generates a new one.
+
+```js
+const GenerateRandomID = () => {
+	const IDkeys =
+		'abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ-#&%_';
+	const idLength = 10;
+	let ID = '';
+
+	for (let index = 0; index < idLength; index++) {
+		ID += IDkeys[Math.floor(Math.random() * IDkeys.length)];
+	}
+
+	if (phoneNumbers.find((number) => number.id === ID)) {
+		return GenerateRandomID();
+	}
+
+	return ID;
+};
+```
+
+The function uses a predefined set of characters to generate a random 10-character ID. If the generated ID is already in use, it calls itself until a unique ID is produced.
+
+The `POST` route validates the request before creating a new entry. It checks that both the `name` and `number` fields are provided, and ensures that the name is unique. If any validation fails, the server responds with a `400 Bad Request` error and an appropriate error message. Otherwise, the new entry is added to the phonebook and returned in the response.
+
+```js
+app.post('/api/persons', (request, response) => {
+	const body = request.body;
+
+	if (!body.name) {
+		return response.status(400).json({
+			error: 'name is missing',
+		});
+	} else if (!body.number) {
+		return response.status(400).json({
+			error: 'number is missing',
+		});
+	} else if (phoneNumbers.find((number) => number.name === body.name)) {
+		return response.status(400).json({
+			error: 'name must be unique',
+		});
+	}
+
+	const data = {
+		id: GenerateRandomID(),
+		name: body.name,
+		number: body.number,
+	};
+
+	phoneNumbers = phoneNumbers.concat(data);
+	response.json(data);
+});
+```
+
+**Time used:** Around 15 minutes.
 
 ## Part 2 - 23.07.2026 - 27.07.2026
 

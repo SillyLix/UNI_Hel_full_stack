@@ -165,6 +165,12 @@ app.post('/api/persons', (request, response) => {
 
 **Time used:** Around 15 minutes.
 
+### Task 7 - Phonebook backend, step 7
+
+Added an `app.use(morgen('tiny'))` to use the morgan middleware.
+
+**Time used:** Around 5 min
+
 ## Part 2 - 23.07.2026 - 27.07.2026
 
 ### Task 1 - Course Information, step 6

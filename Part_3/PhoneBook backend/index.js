@@ -1,26 +1,28 @@
 const express = require('express');
+const morgan = require('morgan');
 const app = express();
 
 app.use(express.json());
+app.use(morgan('tiny'));
 
 let phoneNumbers = [
 	{
-		id: 'f%v#F6VKYt',
+		id: '1',
 		name: 'Arto Hellas',
 		number: '040-123456',
 	},
 	{
-		id: '3UvLiEys%J',
+		id: '2',
 		name: 'Ada Lovelace',
 		number: '39-44-5323523',
 	},
 	{
-		id: 'vg_#%YEpuV',
+		id: '3',
 		name: 'Dan Abramov',
 		number: '12-43-234345',
 	},
 	{
-		id: '584PZTtJRt',
+		id: '4',
 		name: 'Mary Poppendieck',
 		number: '39-23-6423122',
 	},

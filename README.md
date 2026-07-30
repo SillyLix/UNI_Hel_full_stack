@@ -23,6 +23,7 @@ part_2
 
 - [Part 3 - 29.07.2026 - xx](#part-3---29072026---xx)
   - [Task 1 - Phonebook backend, step 1](#task-1---Phonebook-backend-step-1)
+  - [Task 2 - Phonebook backend, step 2](#task-2---Phonebook-backend-step-2)
 - [Part 2 - 23.07.2026 - 27.07.2026](#part-2---23072026---27072026)
   - [Task 1 - Course Information, step 6](#task-1---course-information-step-6)
   - [Task 2 - Course Information, step 7](#task-2---course-information-step-7)
@@ -83,6 +84,12 @@ started with `node init` to make a project. I installed `express` and added `dev
 I coded the get method in `index.js`. At the end also added `.gitignore` so not all the stuff would be added in github.
 
 **Time used:** Around 10 min
+
+### Task 2 - Phonebook backend, step 2
+
+Added an new `app.get()` request to get an info page on `/info`.
+
+**Time used:** Around 5 min
 
 ## Part 2 - 23.07.2026 - 27.07.2026
 

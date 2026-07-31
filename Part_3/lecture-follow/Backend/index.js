@@ -38,10 +38,6 @@ const generateID = () => {
 	return String(maxID + 1);
 };
 
-app.get('/', (request, response) => {
-	response.send('./index.html');
-});
-
 app.get('/api/notes', (request, response) => {
 	response.json(notes);
 });

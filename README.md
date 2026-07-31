@@ -5,16 +5,17 @@ This is a repo where I will add all the tasks and projects I do for the Full Sta
 # File Format
 
 <pre>
-Part_0
-  Course Name
-    (other files needed in task e.g. html, css, js, md ...)
-  Course Name
-  Course Name
-  Lecture_Follow (This is a project where I do the stuff shown in lecture, aka chapters.)
-part_1
-  ...
-part_2
-  ...
+repo/
+├── Part_0/
+│   ├── Course1/
+│   ├── Course2/
+│   └── Lecture_Follow/
+│       ├── package.json
+│       ├── server.js
+│       └── ...
+├── Part_1/
+├── Part_2/
+└── README.md
 </pre>
 
 # Dates and Documentation

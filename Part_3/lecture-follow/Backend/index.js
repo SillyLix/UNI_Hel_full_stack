@@ -9,7 +9,7 @@ const requestLogger = (request, response, next) => {
 	console.log('---');
 	next();
 };
-
+app.use(express.static('dist'));
 app.use(express.json());
 app.use(requestLogger);
 app.use(cors());
@@ -39,7 +39,7 @@ const generateID = () => {
 };
 
 app.get('/', (request, response) => {
-	response.send('<h1>Hello World!</h1>');
+	response.send('./index.html');
 });
 
 app.get('/api/notes', (request, response) => {

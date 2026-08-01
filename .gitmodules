@@ -1,6 +1,13 @@
+
 [submodule "Part_3/PhoneBook/HEL_Phonebook"]
 	path = Part_3/PhoneBook/HEL_Phonebook
 	url = https://github.com/SillyLix/HEL_Phonebook
 [submodule "Part_3/lecture-follow/Hel_notesApp"]
 	path = Part_3/lecture-follow/Hel_notesApp
+	url = https://github.com/SillyLix/Hel_notesApp
+[submodule "Part_3/HEL_Phonebook"]
+	path = Part_3/HEL_Phonebook
+	url = https://github.com/SillyLix/HEL_Phonebook
+[submodule "Part_3/Hel_notesApp"]
+	path = Part_3/Hel_notesApp
 	url = https://github.com/SillyLix/Hel_notesApp

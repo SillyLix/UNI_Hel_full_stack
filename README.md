@@ -4,6 +4,10 @@ This is a repo where I will add all the tasks and projects I do for the Full Sta
 
 # File Format
 
+# File Format
+
+> **Note:** If a folder name starts with **`HEL_`**, the project has been deployed online. You can find the deployment link in that folder's `README.md`.
+
 <pre>
 repo/
 ├── Part_0/
@@ -15,6 +19,9 @@ repo/
 │       └── ...
 ├── Part_1/
 ├── Part_2/
+├── Part_3/
+│   └── HEL_Phonebook/
+│       └── README.md
 └── README.md
 </pre>
 
@@ -31,6 +38,7 @@ repo/
   - [Task 5 and 6 - Phonebook backend, step 5 and 6](#task-5-and-6---phonebook-backend-step-5-and-6)
   - [Task 7 - Phonebook backend, step 7](#task-7---phonebook-backend-step-7)
   - [Task 8 - Phonebook backend, step 8](#task-8---phonebook-backend-step-8)
+  * [Task 9, 10 and 11 - Phonebook Backend, Steps 9, 10 and 11](#task-9-10-and-11---phonebook-backend-steps-9-10-and-11)
 - [Part 2 - 23.07.2026 - 27.07.2026](#part-2---23072026---27072026)
   - [Task 1 - Course Information, step 6](#task-1---course-information-step-6)
   - [Task 2 - Course Information, step 7](#task-2---course-information-step-7)
@@ -193,7 +201,7 @@ this creates a new token that returns the body of the request in string and that
 
 **Time used:** Around 20 min
 
-### Task 9 - Phonebook Backend, Step 9
+### Task 9, 10 and 11 - Phonebook Backend, Step 9, 10 and 11
 
 Deployed the Phonebook application to Render at https://hel-phonebook.onrender.com. Updated both the backend and frontend to support the deployment.
 

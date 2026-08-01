@@ -36,6 +36,7 @@ repo/
   - [Task 7 - Phonebook backend, step 7](#task-7---phonebook-backend-step-7)
   - [Task 8 - Phonebook backend, step 8](#task-8---phonebook-backend-step-8)
   - [Task 9, 10 and 11 - Phonebook Backend, Step 9, 10 and 11](#task-9-10-and-11---phonebook-backend-step-9-10-and-11)
+  - [Task 12 - Command-line database](#task-12---Command-line-database)
 - [Part 2 - 23.07.2026 - 27.07.2026](#part-2---23072026---27072026)
   - [Task 1 - Course Information, step 6](#task-1---course-information-step-6)
   - [Task 2 - Course Information, step 7](#task-2---course-information-step-7)
@@ -244,6 +245,12 @@ Updated `package.json` by adding build and deployment scripts:
 ```
 
 **Time used:** Around 20 minutes.
+
+### Task 12 - Command-line database
+
+made an `mongo.js` file and made it so it can add and look for data from mongodb.
+
+**Time used:** Around 20 min
 
 ## Part 2 - 23.07.2026 - 27.07.2026
 

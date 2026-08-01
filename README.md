@@ -193,6 +193,53 @@ this creates a new token that returns the body of the request in string and that
 
 **Time used:** Around 20 min
 
+### Task 9 - Phonebook Backend, Step 9
+
+Deployed the Phonebook application to Render at https://hel-phonebook.onrender.com. Updated both the backend and frontend to support the deployment.
+
+Added a server proxy configuration in `vite.config.js`:
+
+```js
+export default defineConfig({
+	plugins: [react()],
+	server: {
+		proxy: {
+			'/api': {
+				target: 'http://localhost:3001',
+				changeOrigin: true,
+			},
+		},
+	},
+});
+```
+
+Updated `index.js` to serve the frontend build and use an automatically assigned port in production:
+
+```js
+app.use(express.static('dist'));
+
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, () => {
+	console.log('Opening port', PORT);
+});
+```
+
+Updated `package.json` by adding build and deployment scripts:
+
+```json
+"scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "build:ui": "rm -rf dist && cd ../frontend && npm run build && cp -r dist ../backend",
+  "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push",
+  "lint": "eslint .",
+  "preview": "vite preview",
+  "server": "json-server -p 3001 db.json"
+}
+```
+
+**Time used:** Around 20 minutes.
+
 ## Part 2 - 23.07.2026 - 27.07.2026
 
 ### Task 1 - Course Information, step 6

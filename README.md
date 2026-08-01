@@ -37,6 +37,7 @@ repo/
   - [Task 8 - Phonebook backend, step 8](#task-8---phonebook-backend-step-8)
   - [Task 9, 10 and 11 - Phonebook Backend, Step 9, 10 and 11](#task-9-10-and-11---phonebook-backend-step-9-10-and-11)
   - [Task 12 - Command-line database](#task-12---Command-line-database)
+  - [Task 13 and 14 - Phonebook database, step 1 and 2](#task-13-and-14---phonebook-database-step-1-and-2)
 - [Part 2 - 23.07.2026 - 27.07.2026](#part-2---23072026---27072026)
   - [Task 1 - Course Information, step 6](#task-1---course-information-step-6)
   - [Task 2 - Course Information, step 7](#task-2---course-information-step-7)
@@ -251,6 +252,58 @@ Updated `package.json` by adding build and deployment scripts:
 made an `mongo.js` file and made it so it can add and look for data from mongodb.
 
 **Time used:** Around 20 min
+
+# Task 13 and 14 - Phonebook database, step 1 and 2
+
+I created a `personData` model to handle the database connection, added a `.env` file for the database URL, updated the code in `index.js` to work with the database, and added an `app.put` route so that I can update phone numbers as well.
+
+I started reading the [Mongoose documentation](https://mongoosejs.com/docs/guide.html) to understand how it works. I needed a way to count the number of entries in the database for the `/api/persons/info` route, so I learned about `countDocuments`.
+
+```js
+app.get('/api/persons/info', async (request, response) => {
+	const count = await personsData.countDocuments({});
+
+	const infoPage = `
+    <div>
+      <p>Phonebook has info for ${count} people</p>
+      <p>${new Date()}</p>
+    </div>
+  `;
+
+	response.send(infoPage);
+});
+```
+
+I also used `countDocuments` in the POST route to check if the name already exists in the database.
+
+```js
+app.post('/api/persons', (request, response) => {
+	body = request.body;
+
+	if (!body.name) {
+		return response.status(400).json({
+			error: 'name is missing',
+		});
+	} else if (!body.number) {
+		return response.status(400).json({
+			error: 'number is missing',
+		});
+	} else if (personsData.collection.countDocuments({ name: body.name }) > 0) {
+		return response.status(400).json({
+			error: 'name must be unique',
+		});
+	}
+
+	const data = new personsData({
+		name: body.name,
+		number: body.number,
+	});
+
+	data.save({}).then((res) => response.json(res));
+});
+```
+
+**Time used:** Around 2 hours
 
 ## Part 2 - 23.07.2026 - 27.07.2026
 

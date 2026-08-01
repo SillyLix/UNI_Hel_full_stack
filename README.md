@@ -4,8 +4,6 @@ This is a repo where I will add all the tasks and projects I do for the Full Sta
 
 # File Format
 
-# File Format
-
 > **Note:** If a folder name starts with **`HEL_`**, the project has been deployed online. You can find the deployment link in that folder's `README.md`.
 
 <pre>
@@ -30,7 +28,6 @@ repo/
 ## Table of Contents
 
 - [Part 3 - 29.07.2026 - xx](#part-3---29072026---xx)
-- [Part 3 - 29.07.2026 - xx](#part-3---29072026---xx)
   - [Task 1 - Phonebook backend, step 1](#task-1---phonebook-backend-step-1)
   - [Task 2 - Phonebook backend, step 2](#task-2---phonebook-backend-step-2)
   - [Task 3 - Phonebook backend, step 3](#task-3---phonebook-backend-step-3)
@@ -38,7 +35,7 @@ repo/
   - [Task 5 and 6 - Phonebook backend, step 5 and 6](#task-5-and-6---phonebook-backend-step-5-and-6)
   - [Task 7 - Phonebook backend, step 7](#task-7---phonebook-backend-step-7)
   - [Task 8 - Phonebook backend, step 8](#task-8---phonebook-backend-step-8)
-  * [Task 9, 10 and 11 - Phonebook Backend, Steps 9, 10 and 11](#task-9-10-and-11---phonebook-backend-steps-9-10-and-11)
+  - [Task 9, 10 and 11 - Phonebook Backend, Step 9, 10 and 11](#task-9-10-and-11---phonebook-backend-step-9-10-and-11)
 - [Part 2 - 23.07.2026 - 27.07.2026](#part-2---23072026---27072026)
   - [Task 1 - Course Information, step 6](#task-1---course-information-step-6)
   - [Task 2 - Course Information, step 7](#task-2---course-information-step-7)

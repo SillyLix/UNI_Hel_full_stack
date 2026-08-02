@@ -38,9 +38,8 @@ repo/
   - [Task 9, 10 and 11 - Phonebook Backend, Step 9, 10 and 11](#task-9-10-and-11---phonebook-backend-step-9-10-and-11)
   - [Task 12 - Command-line database](#task-12---Command-line-database)
   - [Task 13 and 14 - Phonebook database, step 1 and 2](#task-13-and-14---phonebook-database-step-1-and-2)
-
-* [Tasks 15–18 – Phonebook Database, Steps 3–6](#tasks-1518--phonebook-database-steps-36)
-
+  - [Tasks 15–18 – Phonebook Database, Steps 3–6](#tasks-1518--phonebook-database-steps-36)
+  - [Tasks 19 – Phonebook Database, Step 7](#tasks-19--phonebook-database-step-7)
 - [Part 2 - 23.07.2026 - 27.07.2026](#part-2---23072026---27072026)
   - [Task 1 - Course Information, step 6](#task-1---course-information-step-6)
   - [Task 2 - Course Information, step 7](#task-2---course-information-step-7)
@@ -328,7 +327,55 @@ const errorHandler = (error, req, res, next) => {
 app.use(errorHandler);
 ```
 
-Time used: Around 10 minutes
+**Time used:** Around 10 minutes
+
+### Tasks 19 – Phonebook Database, Step 7
+
+I created a `setNote` function in `App.jsx` that updates `setNoteMessage`:
+
+```js
+const setNote = (message, isError = false, time = 3000) => {
+	setNoteMessage({ message, isError });
+	setTimeout(() => {
+		setNoteMessage({ message: null, isError: false });
+	}, time);
+};
+```
+
+With this helper, I no longer need to add a `setTimeout` every time I want to display a notification.
+
+I also updated the `errorHandler` to handle validation errors:
+
+```js
+const errorHandler = (error, req, res, next) => {
+	console.log('error message:', error.message);
+
+	if (error.name === 'CastError') {
+		return res.status(400).send({ error: 'malformatted id' });
+	} else if (error.name === 'ValidationError') {
+		return res.status(400).json({ error: error.message });
+	}
+	next(error);
+};
+```
+
+Finally, I added a `.catch()` block in `PersonForm.jsx` to display validation errors.
+
+Example:
+
+```js
+phonebookBackend
+	.create(data)
+	.then((response) => {
+		setNote(`Added ${response.name} with phone number ${response.number}`);
+		setPersons(persons.concat(response));
+	})
+	.catch((error) => {
+		setNote(error.response.data.error, true, 5000);
+	});
+```
+
+**Time used:** Around 40 minutes.
 
 ## Part 2 - 23.07.2026 - 27.07.2026
 

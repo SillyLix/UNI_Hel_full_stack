@@ -38,6 +38,9 @@ repo/
   - [Task 9, 10 and 11 - Phonebook Backend, Step 9, 10 and 11](#task-9-10-and-11---phonebook-backend-step-9-10-and-11)
   - [Task 12 - Command-line database](#task-12---Command-line-database)
   - [Task 13 and 14 - Phonebook database, step 1 and 2](#task-13-and-14---phonebook-database-step-1-and-2)
+
+* [Tasks 15–18 – Phonebook Database, Steps 3–6](#tasks-1518--phonebook-database-steps-36)
+
 - [Part 2 - 23.07.2026 - 27.07.2026](#part-2---23072026---27072026)
   - [Task 1 - Course Information, step 6](#task-1---course-information-step-6)
   - [Task 2 - Course Information, step 7](#task-2---course-information-step-7)
@@ -304,6 +307,28 @@ app.post('/api/persons', (request, response) => {
 ```
 
 **Time used:** Around 2 hours
+
+### Tasks 15–18 – Phonebook Database, Steps 3–6
+
+I had already completed most of these tasks in the previous commit. In this part, I added error handling with the `next()` middleware.
+
+I created an errorHandler middleware and updated the different route handlers to forward errors using `.catch(error => next(error)).`
+
+```js
+const errorHandler = (error, req, res, next) => {
+	console.log('error message:', error.message);
+
+	if (error.name === 'CastError') {
+		return res.status(400).send({ error: 'malformatted id' });
+	}
+
+	next(error);
+};
+
+app.use(errorHandler);
+```
+
+Time used: Around 10 minutes
 
 ## Part 2 - 23.07.2026 - 27.07.2026
 

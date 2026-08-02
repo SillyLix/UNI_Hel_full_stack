@@ -2,6 +2,8 @@
 
 This is a repo where I will add all the tasks and projects I do for the Full Stack Open course provided by the University of Helsinki! I will also try to document the progress and process of how I do things. <br>
 
+---
+
 # File Format
 
 > **Note:** If a folder name starts with **`HEL_`**, the project has been deployed online. You can find the deployment link in that folder's `README.md`.
@@ -23,6 +25,8 @@ repo/
 └── README.md
 </pre>
 
+---
+
 # Dates and Documentation
 
 ## Table of Contents
@@ -40,6 +44,8 @@ repo/
   - [Task 13 and 14 - Phonebook database, step 1 and 2](#task-13-and-14---phonebook-database-step-1-and-2)
   - [Tasks 15–18 – Phonebook Database, Steps 3–6](#tasks-1518--phonebook-database-steps-36)
   - [Tasks 19 – Phonebook Database, Step 7](#tasks-19--phonebook-database-step-7)
+  - [Tasks 20 – Phonebook Database, Step 8](#tasks-20--phonebook-database-step-8)
+  - [Tasks 21 – Deploying the Database Backend to Production](#tasks-21--deploying-the-database-backend-to-production)
 - [Part 2 - 23.07.2026 - 27.07.2026](#part-2---23072026---27072026)
   - [Task 1 - Course Information, step 6](#task-1---course-information-step-6)
   - [Task 2 - Course Information, step 7](#task-2---course-information-step-7)
@@ -82,6 +88,8 @@ repo/
   - [Task 3 - HTML forms](#task-3---html-forms)
   - [Task 4 - New note diagram](#task-4---new-note-diagram)
   - [Task 5 - Single page app diagram](#task-5---single-page-app-diagram)
+
+---
 
 ## Part 3 - 29.07.2026 - xx
 
@@ -255,7 +263,7 @@ made an `mongo.js` file and made it so it can add and look for data from mongodb
 
 **Time used:** Around 20 min
 
-# Task 13 and 14 - Phonebook database, step 1 and 2
+### Task 13 and 14 - Phonebook database, step 1 and 2
 
 I created a `personData` model to handle the database connection, added a `.env` file for the database URL, updated the code in `index.js` to work with the database, and added an `app.put` route so that I can update phone numbers as well.
 
@@ -376,6 +384,51 @@ phonebookBackend
 ```
 
 **Time used:** Around 40 minutes.
+
+### Tasks 20 – Phonebook Database, Step 8
+
+Added a custom Mongoose validator for phone numbers:
+
+```js
+const validateNum = (num) => {
+	console.log(num);
+
+	const numHalf = num.split('-');
+
+	console.log(numHalf);
+
+	if (numHalf.length > 2) return false;
+	else if (numHalf[0].length !== 2 && numHalf[0].length !== 3) return false;
+
+	return true;
+};
+
+const validateDash = (num) => {
+	if (!num.includes('-')) return false;
+};
+
+const validateNumber = [
+	{ validator: validateDash, message: '({VALUE}) did not contain "-"' },
+	{
+		validator: validateNum,
+		message: '({VALUE}) did not match the format 123-456789',
+	},
+];
+```
+
+This validator checks that the phone number follows the required format.
+
+**Time used:** Around 1 hour.
+
+### Tasks 21 – Deploying the Database Backend to Production
+
+Deployed the application backend to production:
+
+[Phonebook App](https://hel-phonebook.onrender.com/)
+
+**Time used:** Around 5 minutes.
+
+---
 
 ## Part 2 - 23.07.2026 - 27.07.2026
 
@@ -596,6 +649,8 @@ I made an account on OpenWeather and used it's api to show the weather in the ap
 
 **Time spent:** Around 20 minutes.
 
+---
+
 ## Part 1 - 19.07.2026 - 23.07.2026
 
 ### Task 1 - Course Information, step 1
@@ -684,6 +739,8 @@ Added everything to its own component and made a website that was instructed. Th
 
 **Time used:** Around 40 minutes
 
+---
+
 ## Part 0 - 18.07.2026 - 19.07.2026
 
 ### Task 1 - HTML
@@ -715,7 +772,3 @@ Learnt about Mermaid and Git terminal commands, then used Mermaid to create the 
 Created a diagram showing the requests sent by the SPA and the responses returned by the server.
 
 **Time used:** Around 25 minutes
-
-```
-
-```

@@ -34,6 +34,7 @@ repo/
 - [Part 4 - 07.08.2026 - xx](#part-3---07082026---xx)
   - [Task 1 - Blog List, step 1](#task-1---blog-list-step-1)
   - [Task 2 - Blog List, step 2](#task-2---blog-list-step-2)
+  - [Task 3 - Helper Functions and Unit Tests, step 3](#task-3---helper-functions-and-unit-tests-step-3)
 - [Part 3 - 29.07.2026 - 03.08.2026](#part-3---29072026---03082026)
   - [Task 1 - Phonebook backend, step 1](#task-1---phonebook-backend-step-1)
   - [Task 2 - Phonebook backend, step 2](#task-2---phonebook-backend-step-2)
@@ -107,6 +108,12 @@ initialized the project with node init. Installed all the dependents (express, d
 made different folders and added needed code in the folders.
 
 **Time used:** Around 20 min
+
+### Task 3 - Helper Functions and Unit Tests, step 3
+
+just added all the code given on task and change the `dummy` function to return 1.
+
+**Time used:** Around 5 min
 
 ## Part 3 - 29.07.2026 - 03.08.2026
 

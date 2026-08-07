@@ -31,7 +31,9 @@ repo/
 
 ## Table of Contents
 
-- [Part 3 - 29.07.2026 - xx](#part-3---29072026---xx)
+- [Part 4 - 07.08.2026 - xx](#part-3---07082026---xx)
+
+- [Part 3 - 29.07.2026 - 03.08.2026](#part-3---29072026---03082026)
   - [Task 1 - Phonebook backend, step 1](#task-1---phonebook-backend-step-1)
   - [Task 2 - Phonebook backend, step 2](#task-2---phonebook-backend-step-2)
   - [Task 3 - Phonebook backend, step 3](#task-3---phonebook-backend-step-3)
@@ -91,7 +93,15 @@ repo/
 
 ---
 
-## Part 3 - 29.07.2026 - xx
+## Part 4 - 07.08.2026 - xx
+
+### Blog List, step 1
+
+initialized the project with node init. Installed all the dependents (express, dotnet and mongoose). Made an `logger.js` and `config.js` utils and made an `request.rest` test to test the connection.
+
+**Time used:** Around 10 min
+
+## Part 3 - 29.07.2026 - 03.08.2026
 
 ### Task 1 - Phonebook backend, step 1
 
@@ -134,20 +144,20 @@ Implemented an `app.post()` route that allows new phonebook entries to be added 
 ```js
 const GenerateRandomID = () => {
 	const IDkeys =
-		'abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ-#&%_';
-	const idLength = 10;
-	let ID = '';
+		'abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ-#&%_'
+	const idLength = 10
+	let ID = ''
 
 	for (let index = 0; index < idLength; index++) {
-		ID += IDkeys[Math.floor(Math.random() * IDkeys.length)];
+		ID += IDkeys[Math.floor(Math.random() * IDkeys.length)]
 	}
 
 	if (phoneNumbers.find((number) => number.id === ID)) {
-		return GenerateRandomID();
+		return GenerateRandomID()
 	}
 
-	return ID;
-};
+	return ID
+}
 ```
 
 The function uses a predefined set of characters to generate a random 10-character ID. If the generated ID is already in use, it calls itself until a unique ID is produced.
@@ -156,31 +166,31 @@ The `POST` route validates the request before creating a new entry. It checks th
 
 ```js
 app.post('/api/persons', (request, response) => {
-	const body = request.body;
+	const body = request.body
 
 	if (!body.name) {
 		return response.status(400).json({
 			error: 'name is missing',
-		});
+		})
 	} else if (!body.number) {
 		return response.status(400).json({
 			error: 'number is missing',
-		});
+		})
 	} else if (phoneNumbers.find((number) => number.name === body.name)) {
 		return response.status(400).json({
 			error: 'name must be unique',
-		});
+		})
 	}
 
 	const data = {
 		id: GenerateRandomID(),
 		name: body.name,
 		number: body.number,
-	};
+	}
 
-	phoneNumbers = phoneNumbers.concat(data);
-	response.json(data);
-});
+	phoneNumbers = phoneNumbers.concat(data)
+	response.json(data)
+})
 ```
 
 **Time used:** Around 15 minutes.
@@ -197,13 +207,13 @@ changed `app.use(morgen('tiny'))` to
 
 ```js
 morgan.token('postData', (req, res) => {
-	return JSON.stringify(req.body);
-});
+	return JSON.stringify(req.body)
+})
 app.use(
 	morgan(
 		`:method :url :status :res[content-length] - :response-time ms :postData`,
 	),
-);
+)
 ```
 
 this creates a new token that returns the body of the request in string and that is logged into console by morgan
@@ -227,18 +237,18 @@ export default defineConfig({
 			},
 		},
 	},
-});
+})
 ```
 
 Updated `index.js` to serve the frontend build and use an automatically assigned port in production:
 
 ```js
-app.use(express.static('dist'));
+app.use(express.static('dist'))
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3001
 app.listen(PORT, () => {
-	console.log('Opening port', PORT);
-});
+	console.log('Opening port', PORT)
+})
 ```
 
 Updated `package.json` by adding build and deployment scripts:
@@ -271,46 +281,46 @@ I started reading the [Mongoose documentation](https://mongoosejs.com/docs/guide
 
 ```js
 app.get('/api/persons/info', async (request, response) => {
-	const count = await personsData.countDocuments({});
+	const count = await personsData.countDocuments({})
 
 	const infoPage = `
     <div>
       <p>Phonebook has info for ${count} people</p>
       <p>${new Date()}</p>
     </div>
-  `;
+  `
 
-	response.send(infoPage);
-});
+	response.send(infoPage)
+})
 ```
 
 I also used `countDocuments` in the POST route to check if the name already exists in the database.
 
 ```js
 app.post('/api/persons', (request, response) => {
-	body = request.body;
+	body = request.body
 
 	if (!body.name) {
 		return response.status(400).json({
 			error: 'name is missing',
-		});
+		})
 	} else if (!body.number) {
 		return response.status(400).json({
 			error: 'number is missing',
-		});
+		})
 	} else if (personsData.collection.countDocuments({ name: body.name }) > 0) {
 		return response.status(400).json({
 			error: 'name must be unique',
-		});
+		})
 	}
 
 	const data = new personsData({
 		name: body.name,
 		number: body.number,
-	});
+	})
 
-	data.save({}).then((res) => response.json(res));
-});
+	data.save({}).then((res) => response.json(res))
+})
 ```
 
 **Time used:** Around 2 hours
@@ -323,16 +333,16 @@ I created an errorHandler middleware and updated the different route handlers to
 
 ```js
 const errorHandler = (error, req, res, next) => {
-	console.log('error message:', error.message);
+	console.log('error message:', error.message)
 
 	if (error.name === 'CastError') {
-		return res.status(400).send({ error: 'malformatted id' });
+		return res.status(400).send({ error: 'malformatted id' })
 	}
 
-	next(error);
-};
+	next(error)
+}
 
-app.use(errorHandler);
+app.use(errorHandler)
 ```
 
 **Time used:** Around 10 minutes
@@ -343,11 +353,11 @@ I created a `setNote` function in `App.jsx` that updates `setNoteMessage`:
 
 ```js
 const setNote = (message, isError = false, time = 3000) => {
-	setNoteMessage({ message, isError });
+	setNoteMessage({ message, isError })
 	setTimeout(() => {
-		setNoteMessage({ message: null, isError: false });
-	}, time);
-};
+		setNoteMessage({ message: null, isError: false })
+	}, time)
+}
 ```
 
 With this helper, I no longer need to add a `setTimeout` every time I want to display a notification.
@@ -356,15 +366,15 @@ I also updated the `errorHandler` to handle validation errors:
 
 ```js
 const errorHandler = (error, req, res, next) => {
-	console.log('error message:', error.message);
+	console.log('error message:', error.message)
 
 	if (error.name === 'CastError') {
-		return res.status(400).send({ error: 'malformatted id' });
+		return res.status(400).send({ error: 'malformatted id' })
 	} else if (error.name === 'ValidationError') {
-		return res.status(400).json({ error: error.message });
+		return res.status(400).json({ error: error.message })
 	}
-	next(error);
-};
+	next(error)
+}
 ```
 
 Finally, I added a `.catch()` block in `PersonForm.jsx` to display validation errors.
@@ -375,12 +385,12 @@ Example:
 phonebookBackend
 	.create(data)
 	.then((response) => {
-		setNote(`Added ${response.name} with phone number ${response.number}`);
-		setPersons(persons.concat(response));
+		setNote(`Added ${response.name} with phone number ${response.number}`)
+		setPersons(persons.concat(response))
 	})
 	.catch((error) => {
-		setNote(error.response.data.error, true, 5000);
-	});
+		setNote(error.response.data.error, true, 5000)
+	})
 ```
 
 **Time used:** Around 40 minutes.
@@ -391,21 +401,21 @@ Added a custom Mongoose validator for phone numbers:
 
 ```js
 const validateNum = (num) => {
-	console.log(num);
+	console.log(num)
 
-	const numHalf = num.split('-');
+	const numHalf = num.split('-')
 
-	console.log(numHalf);
+	console.log(numHalf)
 
-	if (numHalf.length > 2) return false;
-	else if (numHalf[0].length !== 2 && numHalf[0].length !== 3) return false;
+	if (numHalf.length > 2) return false
+	else if (numHalf[0].length !== 2 && numHalf[0].length !== 3) return false
 
-	return true;
-};
+	return true
+}
 
 const validateDash = (num) => {
-	if (!num.includes('-')) return false;
-};
+	if (!num.includes('-')) return false
+}
 
 const validateNumber = [
 	{ validator: validateDash, message: '({VALUE}) did not contain "-"' },
@@ -413,7 +423,7 @@ const validateNumber = [
 		validator: validateNum,
 		message: '({VALUE}) did not match the format 123-456789',
 	},
-];
+]
 ```
 
 This validator checks that the phone number follows the required format.
@@ -533,7 +543,7 @@ Implemented the `onDeleteButtonClicked` function to delete a person's informatio
 ```javascript
 // delete phone number
 const onDeleteButtonClicked = (id) => {
-	console.log('delete pressed:', id);
+	console.log('delete pressed:', id)
 
 	persons.map((person) => {
 		if (person.id === id) {
@@ -545,11 +555,11 @@ const onDeleteButtonClicked = (id) => {
 							persons.filter((filterPerson) => filterPerson !== person),
 						),
 					)
-					.catch(() => alert(`${person.name} doesn't exist on the server`));
+					.catch(() => alert(`${person.name} doesn't exist on the server`))
 			}
 		}
-	});
-};
+	})
+}
 ```
 
 **Time used:** Around 40 minutes.
@@ -561,16 +571,16 @@ This has been the most difficult task for me so far. The main issue was my limit
 While working on this task, I encountered many bugs. One of the most common mistakes I made was forgetting to add a `return` statement inside arrow functions when using curly braces. Since I usually write concise arrow functions like this:
 
 ```js
-arr.filter((x) => x === y);
+arr.filter((x) => x === y)
 ```
 
 I often forgot that changing it to:
 
 ```js
 arr.filter((x) => {
-	console.log('smth');
-	return x === y;
-});
+	console.log('smth')
+	return x === y
+})
 ```
 
 requires an explicit `return`. I caught myself making this mistake several times.
@@ -602,10 +612,10 @@ Afterwards, I added a simple if statement and CSS with a red colour to change th
 
 ```js
 const Notification = ({ note = {} }) => {
-	if (note.message === null) return;
-	else if (note.isError) return <div className="error">{note.message}</div>;
-	else return <div className="note">{note.message}</div>;
-};
+	if (note.message === null) return
+	else if (note.isError) return <div className='error'>{note.message}</div>
+	else return <div className='note'>{note.message}</div>
+}
 ```
 
 **Time used:** Around 20 minutes.
@@ -615,8 +625,8 @@ const Notification = ({ note = {} }) => {
 I added two `useState` hooks:
 
 ```js
-const [countries, setCountries] = useState([]);
-const [filterCountries, setFilterCountries] = useState([]);
+const [countries, setCountries] = useState([])
+const [filterCountries, setFilterCountries] = useState([])
 ```
 
 First, I fetched all the data from the API and stored it in `countries`:
@@ -624,9 +634,9 @@ First, I fetched all the data from the API and stored it in `countries`:
 ```js
 useEffect(() => {
 	backend.getAll().then((response) => {
-		setCountries(response);
-	});
-}, []);
+		setCountries(response)
+	})
+}, [])
 ```
 
 After that, I used the `CountriesInput.jsx` component to handle user input and update `filteredCountries`. Finally, the `ShowCountries.jsx` component displays information about the matching countries. It uses `if`/`else` conditions to determine what information to show based on the current state.

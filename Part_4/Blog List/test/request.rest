@@ -2,10 +2,10 @@ POST http://localhost:3001/api/blogs
 Content-Type: application/json
 
 {
-    "title": "Tittle",
-	"author": "tester",
-	"url": "sillylix.com",
-	"likes": 20
+    "title": "Airbnb JavaScript Style Guide",
+	"author": "Airbnb",
+	"url": "https://github.com/airbnb/javascript",
+	"likes": 148000
 }
 
 ###

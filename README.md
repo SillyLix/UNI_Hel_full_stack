@@ -32,7 +32,8 @@ repo/
 ## Table of Contents
 
 - [Part 4 - 07.08.2026 - xx](#part-3---07082026---xx)
-
+  - [Task 1 - Blog List, step 1](#task-1---blog-list-step-1)
+  - [Task 2 - Blog List, step 2](#task-2---blog-list-step-2)
 - [Part 3 - 29.07.2026 - 03.08.2026](#part-3---29072026---03082026)
   - [Task 1 - Phonebook backend, step 1](#task-1---phonebook-backend-step-1)
   - [Task 2 - Phonebook backend, step 2](#task-2---phonebook-backend-step-2)
@@ -95,11 +96,17 @@ repo/
 
 ## Part 4 - 07.08.2026 - xx
 
-### Blog List, step 1
+### Task 1 - Blog List, step 1
 
 initialized the project with node init. Installed all the dependents (express, dotnet and mongoose). Made an `logger.js` and `config.js` utils and made an `request.rest` test to test the connection.
 
 **Time used:** Around 10 min
+
+### Task 2 - Blog List, step 2
+
+made different folders and added needed code in the folders.
+
+**Time used:** Around 20 min
 
 ## Part 3 - 29.07.2026 - 03.08.2026
 

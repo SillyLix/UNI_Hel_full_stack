@@ -13,4 +13,13 @@ const totalLikes = (blogs) => {
 	return sum
 }
 
-module.exports = { dummy, totalLikes }
+const favoriteBlog = (blogs) => {
+	if (blogs.length === 0) return null
+
+	const max = Math.max(...blogs.map((blog) => blog.likes))
+
+	result = blogs.filter((blog) => blog.likes === max)
+	return result[0]
+}
+
+module.exports = { dummy, totalLikes, favoriteBlog }

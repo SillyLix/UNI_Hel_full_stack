@@ -160,47 +160,13 @@ describe('favorite Blog', () => {
 
 **Time used:** Around 15 min
 
-### Task 6 - Helper Functions and Unit Tests, step 4
+### Task 7 - Helper Functions and Unit Tests, step 5
 
-added the `mostBlogs` function in `list_helper.js` and wrote test for it in `mostBlogs.test.js`.
+Added the mostLikes function in list_helper.js and wrote tests for it in mostLikes.test.js.
 
-`mostBlogs` goes through all the blogs and creates a new list containing each author and the number of blogs they have. After that, the list is iterated over again to find the author with the highest number of blogs, and the result is returned.
+mostLikes goes through all the blogs and creates a new list containing each author and the total number of likes they have received. If an author has multiple blogs, their likes are added together. After that, the list is iterated over again to find the author with the highest total number of likes, and the result is returned.
 
-```js
-const mostBlogs = (blogs) => {
-	if (blogs.length === 0) {
-		return null
-	}
-
-	let authors = []
-
-	blogs.forEach((blog) => {
-		const index = authors.findIndex((author) => author[0] === blog.author)
-
-		if (index !== -1) {
-			authors[index][1]++
-		} else {
-			authors.push([blog.author, 1])
-		}
-	})
-
-	let maxValue = -1
-	let returnValue = {}
-	authors.forEach((author) => {
-		if (author[1] > maxValue) {
-			maxValue = author[1]
-			returnValue = {
-				author: author[0],
-				blogs: author[1],
-			}
-		}
-	})
-
-	return returnValue
-}
-```
-
-**Time used:** Around 30 min
+**Time used:** Around 10 min
 
 ## Part 3 - 29.07.2026 - 03.08.2026
 

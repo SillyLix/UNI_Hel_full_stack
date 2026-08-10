@@ -1,0 +1,19 @@
+{
+  "name": "blog-list",
+  "version": "1.0.0",
+  "description": "blog app that let's users to save information about interesting blogs they have stumbled across on the internet",
+  "license": "ISC",
+  "author": "prajwal dhakal",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node --watch index",
+    "start": "node index",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mongoose": "^9.9.1"
+  }
+}

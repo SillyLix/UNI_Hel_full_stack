@@ -34,8 +34,10 @@ repo/
 - [Part 4 - 07.08.2026 - xx](#part-3---07082026---xx)
   - [Task 1 - Blog List, step 1](#task-1---blog-list-step-1)
   - [Task 2 - Blog List, step 2](#task-2---blog-list-step-2)
-  - [Task 3 - Helper Functions and Unit Tests, step 3](#task-3---helper-functions-and-unit-tests-step-1)
+  - [Task 3 - Helper Functions and Unit Tests, step 1](#task-3---helper-functions-and-unit-tests-step-1)
   - [Task 4 - Helper Functions and Unit Tests, step 2](#task-4---helper-functions-and-unit-tests-step-2)
+  - [Task 5 - Helper Functions and Unit Tests, step 3](#task-5---helper-functions-and-unit-tests-step-3)
+  - [Task 6 - Helper Functions and Unit Tests, step 4](#task-6---helper-functions-and-unit-tests-step-4)
 
 - [Part 3 - 29.07.2026 - 03.08.2026](#part-3---29072026---03082026)
   - [Task 1 - Phonebook backend, step 1](#task-1---phonebook-backend-step-1)
@@ -157,6 +159,48 @@ describe('favorite Blog', () => {
 ```
 
 **Time used:** Around 15 min
+
+### Task 6 - Helper Functions and Unit Tests, step 4
+
+added the `mostBlogs` function in `list_helper.js` and wrote test for it in `mostBlogs.test.js`.
+
+`mostBlogs` goes through all the blogs and creates a new list containing each author and the number of blogs they have. After that, the list is iterated over again to find the author with the highest number of blogs, and the result is returned.
+
+```js
+const mostBlogs = (blogs) => {
+	if (blogs.length === 0) {
+		return null
+	}
+
+	let authors = []
+
+	blogs.forEach((blog) => {
+		const index = authors.findIndex((author) => author[0] === blog.author)
+
+		if (index !== -1) {
+			authors[index][1]++
+		} else {
+			authors.push([blog.author, 1])
+		}
+	})
+
+	let maxValue = -1
+	let returnValue = {}
+	authors.forEach((author) => {
+		if (author[1] > maxValue) {
+			maxValue = author[1]
+			returnValue = {
+				author: author[0],
+				blogs: author[1],
+			}
+		}
+	})
+
+	return returnValue
+}
+```
+
+**Time used:** Around 30 min
 
 ## Part 3 - 29.07.2026 - 03.08.2026
 

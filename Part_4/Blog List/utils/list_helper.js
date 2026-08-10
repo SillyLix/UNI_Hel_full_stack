@@ -22,4 +22,36 @@ const favoriteBlog = (blogs) => {
 	return result[0]
 }
 
-module.exports = { dummy, totalLikes, favoriteBlog }
+const mostBlogs = (blogs) => {
+	if (blogs.length === 0) {
+		return null
+	}
+
+	let authors = []
+
+	blogs.forEach((blog) => {
+		const index = authors.findIndex((author) => author[0] === blog.author)
+
+		if (index !== -1) {
+			authors[index][1]++
+		} else {
+			authors.push([blog.author, 1])
+		}
+	})
+
+	let maxValue = -1
+	let returnValue = {}
+	authors.forEach((author) => {
+		if (author[1] > maxValue) {
+			maxValue = author[1]
+			returnValue = {
+				author: author[0],
+				blogs: author[1],
+			}
+		}
+	})
+
+	return returnValue
+}
+
+module.exports = { dummy, totalLikes, favoriteBlog, mostBlogs }
